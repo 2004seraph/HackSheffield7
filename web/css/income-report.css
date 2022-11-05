@@ -22,6 +22,17 @@ body{
     border-collapse: collapse;
 }
 
+#report-title-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    font-size:28px;
+}
+
 .value-heading{
     width:fit-content;
 }
@@ -47,6 +58,16 @@ body{
     border-bottom: 2px solid black;
 }
 
+.summary-title{
+    font-weight: bold;
+    font-size:20px;
+}
+
+.profit-loss-final{
+    border-bottom: double black;
+    border-bottom-width: 6px;
+}
+
 /* ensures value table cells text is bottom right */
 
 #report-table td{
@@ -69,7 +90,6 @@ body{
 }
 
 #report-table th:nth-child(2), #report-table th:nth-child(3){
-    background-color: red;
     margin:0px;
     min-width:100px;
     flex: 1;
@@ -88,7 +108,6 @@ body{
 /* Styling for all the other normal rows in the table */
 
 #report-table td:nth-child(2), #report-table td:nth-child(3){
-    background-color: red;
     margin:0px;
     min-width:100px;
     flex: 1;
