@@ -1,8 +1,6 @@
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-#content{
+#content-report-page{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
     padding:0;
     width:100%;
@@ -29,7 +27,7 @@ body{
     text-align: center;
 }
 
-h1{
+#report-heading{
     font-size:28px;
 }
 
@@ -118,32 +116,5 @@ h1{
     padding:0px;
     padding-right:10px;
 
-    font-size:16px;
-}
-
-
-
-/* ------------------------- */
-
-h2{
-    margin:0;
-    text-decoration: underline;
-    font-size:20px;
-}
-
-#profit-loss-value{
-    text-decoration: underline;
-    border-bottom: 2px solid #000;
-    float:right;
-}
-
-hr{
-    width:50%;
-    text-align: left;
-    margin-left:0;
-}
-
-p{
-    margin:0;
     font-size:16px;
 }
