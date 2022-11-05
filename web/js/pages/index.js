@@ -35,8 +35,7 @@ function gotoDashboard() {
 function signIn() {
     console.log("sign in")
 
-    //fetch transaction data
-    //put it into a state
+    
 
     next()
 }
