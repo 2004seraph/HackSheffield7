@@ -1,4 +1,11 @@
+"use strict"
+
 class StagedConfig {
+    /**
+     * A manager for staged UIs
+     * @param {element} element 
+     * @param {CallableFunction} endCallback 
+     */
     constructor(element, endCallback = () => {}) {
         this.element = element
         this.endCallback = endCallback
@@ -10,6 +17,10 @@ class StagedConfig {
         this.show()
     }
 
+    /**
+     * Goes to a specific UI level/stage
+     * @param {number} stage 
+     */
     goto(stage) {
         this.stage = stage
         this.show()

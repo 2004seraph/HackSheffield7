@@ -1,6 +1,10 @@
 "use strict"
 
 class TabsetNotebook {
+    /**
+     * Tabset notebook creator
+     * @param {element} mainElement 
+     */
     constructor(mainElement) {
         this.element = mainElement
         this.tablinks = this.element.querySelector('.tabset-links')

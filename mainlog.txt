@@ -1,4 +1,30 @@
-[2022-11-05 13:43:00.496] [error] (node:8608) electron: Failed to load URL: file:///C:/dashboard.html with error: ERR_FILE_NOT_FOUND
-(Use `electron --trace-warnings ...` to show where the warning was created)
-[2022-11-05 16:19:20.378] [error] (node:2892) electron: Failed to load URL: file:///C:/dashboard.html with error: ERR_FILE_NOT_FOUND
-(Use `electron --trace-warnings ...` to show where the warning was created)
+[2022-11-05 18:41:06.049] [info]  w
+[2022-11-05 18:41:22.267] [info]  w
+[2022-11-05 18:44:16.995] [info]  w
+[2022-11-05 18:44:18.587] [info]  humgus
+[2022-11-05 18:45:20.638] [info]  w
+[2022-11-05 18:45:23.131] [info]  penis
+[2022-11-05 18:46:01.866] [info]  w
+[2022-11-05 18:46:03.396] [info]  penis
+[2022-11-05 18:50:36.327] [info]  w
+[2022-11-05 18:52:25.736] [info]  w
+[2022-11-05 18:52:49.900] [info]  w
+[2022-11-05 18:56:01.339] [info]  w
+[2022-11-05 18:56:11.554] [info]  w
+[2022-11-05 18:56:16.521] [info]  w
+[2022-11-05 18:56:28.187] [info]  w
+[2022-11-05 18:57:08.174] [info]  w
+[2022-11-05 18:57:49.951] [info]  w
+[2022-11-05 18:58:05.731] [info]  w
+[2022-11-05 18:58:22.736] [info]  w
+[2022-11-05 18:58:45.110] [info]  w
+[2022-11-05 18:59:34.343] [info]  w
+[2022-11-05 18:59:54.208] [info]  w
+[2022-11-05 19:00:59.290] [info]  w
+[2022-11-05 19:01:30.344] [info]  w
+[2022-11-05 19:01:43.484] [info]  w
+[2022-11-05 19:01:54.603] [info]  w
+[2022-11-05 19:02:02.330] [info]  w
+[2022-11-05 19:03:03.176] [info]  w
+[2022-11-05 19:03:17.140] [info]  w
+[2022-11-05 19:06:21.723] [info]  w
