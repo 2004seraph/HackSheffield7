@@ -1,5 +1,9 @@
 var titleText = document.getElementById("report-title")
 
+var tableElement = document.getElementById("table-contents")
+var incomesEnd = document.getElementById("other-incomes-section-end")
+var expensesEnd = document.getElementById("expenses-section-end")
+
 var creditSales = document.getElementById("credit-sales")
 var cashSales = document.getElementById("cash-sales")
 var salesReturns = document.getElementById("sales-returns")
@@ -18,7 +22,7 @@ var grossProfit = document.getElementById("gross-profit")
 // var cashSales = document.getElementById("cash-sales").parentElement.parentElement
 // cashSales.parentNode.removeChild(cashSales)
 
-var insertionData = []
+let insertionData = []
 
 function updateTitle(name, yearEnd){
     titleText.textContent = "Income Statement for " + name + " for the Year Ended " + yearEnd
@@ -85,6 +89,31 @@ function updateGrossProfit(grossProfit){
     this.grossProfit.textContent = grossProfit
 }
 
+function AddEntryToIncomes(name, value){
+
+    let parentNode = tableElement
+
+    let newRow = document.createElement("tr")
+    let referenceNode = incomesEnd
+
+    console.log(referenceNode)
+    console.log(newRow)
+
+    let insertedRow = parentNode.insertBefore(newRow, referenceNode);
+
+    for(let i = 0; i < 3; i++){
+        let td = document.createElement("td")
+
+        if(i == 0){
+            td.textContent = name + ":"
+        }
+        if(i == 1){
+            td.textContent = value
+        }
+        insertedRow.appendChild(td)
+    }
+}
+
 
 // FUNCTION CALLS TO UDPATE EVERYTHING
 
@@ -95,3 +124,5 @@ updateRevenueSection(400, 0, 0, 0, 400)
 updateCostOfSalesSection(300, 0, 100, 0, 200)
 
 updateGrossProfit(6000)
+
+AddEntryToIncomes("Rent Recieved", 260)

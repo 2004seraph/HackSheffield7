@@ -11,174 +11,145 @@
                 </div>
 
                 <table id="report-table">
-                    <tr>
-                        <th></th>
-                        <th class="value-heading">£</th>
-                        <th class="value-heading">£</th>
-                    </tr>
-
-                    <!-- REVENUE  -->
-
-                    <tr>
-                        <td><span class="section-title">Revenue</span></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Credit Sales: </td>
-                        <td><span id="credit-sales">xxx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Cash Sales: </td>
-                        <td><span id="cash-sales">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Less Sales Returns: </td>
-                        <td><span id="sales-returns">x</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Less Cash Returns: </td>
-                        <td><span id="cash-returns">x</span></td>
-                        <td></td>
-                    </tr>
-                    <tr class="section-last-row">
-                        <td class="section-total"></td>
-                        <td></td>
-                        <td class="section-total-value"><span id="net-revenue">XXX</span></td>
-                    </tr>
-
-                    <!-- COST OF SALES -->
-
-                    <tr>
-                        <td><span class="section-title">Less Cost of Sales</span></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Opening Inventory at [Year Start]: </td>
-                        <td><span id="opening-inventory">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Purchases: </td>
-                        <td><span id="purchases">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Less Purchase Returns: </td>
-                        <td><span id="purchase-returns">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Less Closing Inventories at [Year End]: </td>
-                        <td><span id="closing-inventory">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr class="section-last-row">
-                        <td class="section-total"></td>
-                        <td></td>
-                        <td class="section-total-value"><span id="net-cost-of-sales">(XXX)</span></td>
-                    </tr>
-
-                    <!-- GROSS PROFIT -->
-                    <tr>
-                        <td><br></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><span class="summary-title">Gross Profit</span></td>
-                        <td></td>
-                        <td class="section-total-value"><span id="gross-profit">XXX</span></td>
-                    </tr>
-                    <tr>
-                        <td><br></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- OTHER INCOMES -->
-
-                    <tr>
-                        <td><span class="section-title">Other Incomes</span></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Rent Recieved: </td>
-                        <td><span id="example-other-income-1">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Discounts Recieved: </td>
-                        <td><span id="example-other-income-2">x</span></td>
-                        <td></td>
-                    </tr>
-                    <tr class="section-last-row">
-                        <td class="section-total"></td>
-                        <td></td>
-                        <td class="section-total-value"><span id="net-other-incomes">(XXX)</span></td>
-                    </tr>
-
-                    <!-- EXPENSES -->
-
-                    <tr>
-                        <td><span class="section-title">Expenses</span></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Wages: </td>
-                        <td><span id="example-expense-1">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Water: </td>
-                        <td><span id="example-expense-2">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Discounts Given: </td>
-                        <td><span id="example-expense-3">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Marketing: </td>
-                        <td><span id="example-expense-4">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Electricity: </td>
-                        <td><span id="example-expense-5">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>EG Rent: </td>
-                        <td><span id="example-expense-6">xx</span></td>
-                        <td></td>
-                    </tr>
-                    <tr class="section-last-row">
-                        <td class="section-total"></td>
-                        <td></td>
-                        <td class="section-total-value"><span id="net-expenses">XXX</span></td>
-                    </tr>
-
-                    <!-- PROFIT OR LOSS -->
-
-                    <tr>
-                        <td><br></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><span class="summary-title">Profit/Loss for the Year</span></td>
-                        <td></td>
-                        <td class="section-total-value profit-loss-final"><span id="profit-loss">XXX</span></td>
-                    </tr>
-
+                    <tbody id="table-contents">
+                        <tr>
+                            <th></th>
+                            <th class="value-heading">£</th>
+                            <th class="value-heading">£</th>
+                        </tr>
+    
+                        <!-- REVENUE  -->
+    
+                        <tr>
+                            <td><span class="section-title">Revenue</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Credit Sales: </td>
+                            <td><span id="credit-sales">xxx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cash Sales: </td>
+                            <td><span id="cash-sales">xx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Less Sales Returns: </td>
+                            <td><span id="sales-returns">x</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Less Cash Returns: </td>
+                            <td><span id="cash-returns">x</span></td>
+                            <td></td>
+                        </tr>
+                        <tr class="section-last-row">
+                            <td class="section-total"></td>
+                            <td></td>
+                            <td class="section-total-value"><span id="net-revenue">XXX</span></td>
+                        </tr>
+    
+                        <!-- COST OF SALES -->
+    
+                        <tr>
+                            <td><span class="section-title">Less Cost of Sales</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Opening Inventory at [Year Start]: </td>
+                            <td><span id="opening-inventory">xx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Purchases: </td>
+                            <td><span id="purchases">xx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Less Purchase Returns: </td>
+                            <td><span id="purchase-returns">xx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Less Closing Inventories at [Year End]: </td>
+                            <td><span id="closing-inventory">xx</span></td>
+                            <td></td>
+                        </tr>
+                        <tr class="section-last-row">
+                            <td class="section-total"></td>
+                            <td></td>
+                            <td class="section-total-value"><span id="net-cost-of-sales">(XXX)</span></td>
+                        </tr>
+    
+                        <!-- GROSS PROFIT -->
+                        <tr>
+                            <td><br></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="summary-title">Gross Profit</span></td>
+                            <td></td>
+                            <td class="section-total-value"><span id="gross-profit">XXX</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+    
+                        <!-- OTHER INCOMES -->
+    
+                        <tr>
+                            <td><span class="section-title">Other Incomes</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- <tr>
+                            <td>EG Rent Recieved: </td>
+                            <td><span id="example-other-income-1">xx</span></td>
+                            <td></td>
+                        </tr> -->
+                        <tr class="section-last-row" id="other-incomes-section-end">
+                            <td class="section-total"></td>
+                            <td></td>
+                            <td class="section-total-value"><span id="net-other-incomes">(XXX)</span></td>
+                        </tr>
+    
+                        <!-- EXPENSES -->
+    
+                        <tr>
+                            <td><span class="section-title">Expenses</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- <tr>
+                            <td>EG Wages: </td>
+                            <td><span id="example-expense-1">xx</span></td>
+                            <td></td>
+                        </tr>-->
+                        <tr class="section-last-row" id="expenses-section-end">
+                            <td class="section-total"></td>
+                            <td></td>
+                            <td class="section-total-value"><span id="net-expenses">XXX</span></td>
+                        </tr>
+    
+                        <!-- PROFIT OR LOSS -->
+    
+                        <tr>
+                            <td><br></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="summary-title">Profit/Loss for the Year</span></td>
+                            <td></td>
+                            <td class="section-total-value profit-loss-final"><span id="profit-loss">XXX</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
