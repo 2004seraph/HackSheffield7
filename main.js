@@ -10,26 +10,21 @@ const { exit } = require('process')
 
 const NODE_ENV = 'development'
 
-const DATA_DIR = "SAM_Data"
+const DATA_DIR = path.join(__dirname + "/SAM_Data")
 
 //file logging
-log.transports.file.resolvePath = () => path.join(__dirname, DATA_DIR + '/mainlog.txt')
+log.transports.file.resolvePath = () => path.join(DATA_DIR, 'mainlog.txt')
 Object.assign(console, log.functions)
 // if (NODE_ENV == "production") {
 //     Object.assign(console, log.functions)
 // }
 
 //create user data file if not exists (or if it fails to parse)
-const userDataFilePath = DATA_DIR + "/UserSoleStats.json"
+const userDataFilePath = path.join(DATA_DIR, "UserSoleStats.json")
 var GlobalUserData = {}
-
-fs.mkdir("SAM_Data", (error) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log("Data directory created")
-    }
-})
+if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR)
+}
 if (!fs.existsSync(userDataFilePath)) {
     fs.writeFileSync(userDataFilePath, '{}')
 } else {
