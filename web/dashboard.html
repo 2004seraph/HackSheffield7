@@ -6,44 +6,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
-        <link rel="stylesheet" href="css/dashboard.css">
         <link rel="stylesheet" href="css/tabset-notebook.css">
 
         <script src="js/lib/jquery-3.6.1.min.js"></script>
-
-        <link rel="import" href="incomeTemplate.html" />
+        <script src="js/static/tabset-notebook.js"></script>
     </head>
     <body>
-        <div id="window-titlebar">
-            <h1>SoleStats</h1>
-        </div>
+        <div id="main-notebook">
+            <div class="tabset-links">
+                <button class="tabset-link" name="London">London</button>
+                <button class="tabset-link" name="Paris">Paris</button>
+                <button class="tabset-link" name="Tokyo">Tokyo</button>
+            </div>
 
-        <div id="window-content">
-            <div class="tabset-notebook">
-                <div class="tabset-links">
-                    <button class="tabset-link tabset-link-default" name="dashboard">Dashboard</button>
-                    <button class="tabset-link" name="tags">Tags</button>
-                    <button class="tabset-link" name="transactions">Transactions</button>
-                    <button class="tabset-link" name="expense">Expense Report</button>
+            <!-- 74 94 -->
+            
+            <div class="tabset-contents">
+                <div id="London" class="tabset-content">
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
                 </div>
                 
-                <div class="tabset-contents">
-                    <div id="dashboard" class="tabset-content">
-                    </div>
-                    
-                    <div id="tags" class="tabset-content">
-                    </div>
-                    
-                    <div id="transactions" class="tabset-content">
-                    </div>
-                    
-                    <div id="expense" class="tabset-content">
-                    </div>
+                <div id="Paris" class="tabset-content">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+                
+                <div id="Tokyo" class="tabset-content">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
                 </div>
             </div>
         </div>
 
-        <script src="js/static/tabset-notebook.js"></script>
-        <!-- <script src="js/pages/dashboard.js"></script> -->
+        <script src="js/pages/dashboard.js"></script>
     </body>
 </html>
