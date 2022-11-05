@@ -37,15 +37,46 @@
 [2022-11-05 20:06:22.212] [info]  w
 [2022-11-05 20:08:13.780] [info]  w
 [2022-11-05 20:08:33.804] [info]  w
-[2022-11-05 21:02:12.612] [info]  w
-[2022-11-05 21:16:56.526] [info]  w
-[2022-11-05 21:18:15.147] [info]  w
-[2022-11-05 21:19:03.277] [info]  w
-[2022-11-05 21:20:25.295] [info]  w
-[2022-11-05 21:20:38.584] [info]  w
-[2022-11-05 21:27:03.540] [info]  w
-[2022-11-05 21:28:43.237] [info]  w
-[2022-11-05 21:30:42.285] [info]  w
-[2022-11-05 21:31:56.837] [info]  w
-[2022-11-05 21:33:21.181] [info]  w
-[2022-11-05 21:35:45.615] [info]  w
+[2022-11-05 20:09:07.164] [info]  w
+[2022-11-05 21:02:37.109] [info]  w
+[2022-11-05 21:30:19.164] [error] App threw an error during load
+[2022-11-05 21:30:19.170] [error] ReferenceError: fs is not defined
+    at Object.<anonymous> (C:\Users\Sam Taseff\Documents\HackSheffield7\main.js:20:1)
+    at Module._compile (node:internal/modules/cjs/loader:1120:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1175:10)
+    at Module.load (node:internal/modules/cjs/loader:988:32)
+    at Module._load (node:internal/modules/cjs/loader:829:12)
+    at c._load (node:electron/js2c/asar_bundle:5:13339)
+    at loadApplicationPackage (C:\Users\Sam Taseff\Documents\HackSheffield7\node_modules\electron\dist\resources\default_app.asar\main.js:121:16)
+    at Object.<anonymous> (C:\Users\Sam Taseff\Documents\HackSheffield7\node_modules\electron\dist\resources\default_app.asar\main.js:233:9)
+    at Module._compile (node:internal/modules/cjs/loader:1120:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1175:10)
+[2022-11-05 21:31:48.164] [info]  {}
+[2022-11-05 21:31:48.202] [info]  w
+[2022-11-05 21:31:48.386] [error] Error occurred in handler for 'getUserData': ReferenceError: userData is not defined
+    at C:\Users\Sam Taseff\Documents\HackSheffield7\main.js:65:9
+    at node:electron/js2c/browser_init:193:567
+    at EventEmitter.<anonymous> (node:electron/js2c/browser_init:165:11606)
+    at EventEmitter.emit (node:events:527:28)
+    at EventEmitter.callbackTrampoline (node:internal/async_hooks:130:17)
+[2022-11-05 21:32:26.102] [info]  {}
+[2022-11-05 21:32:26.136] [info]  w
+[2022-11-05 21:32:40.186] [info]  { name: 12 }
+[2022-11-05 21:32:40.217] [info]  w
+[2022-11-05 21:32:48.002] [error] App threw an error during load
+[2022-11-05 21:32:48.006] [error] SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (C:\Users\Sam Taseff\Documents\HackSheffield7\main.js:25:27)
+    at Module._compile (node:internal/modules/cjs/loader:1120:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1175:10)
+    at Module.load (node:internal/modules/cjs/loader:988:32)
+    at Module._load (node:internal/modules/cjs/loader:829:12)
+    at c._load (node:electron/js2c/asar_bundle:5:13339)
+    at loadApplicationPackage (C:\Users\Sam Taseff\Documents\HackSheffield7\node_modules\electron\dist\resources\default_app.asar\main.js:121:16)
+    at Object.<anonymous> (C:\Users\Sam Taseff\Documents\HackSheffield7\node_modules\electron\dist\resources\default_app.asar\main.js:233:9)
+    at Module._compile (node:internal/modules/cjs/loader:1120:14)
+[2022-11-05 21:34:06.582] [info]  {}
+[2022-11-05 21:34:06.615] [info]  w
+[2022-11-05 21:34:56.826] [info]  w
+[2022-11-05 21:36:02.121] [info]  w
+[2022-11-05 21:36:47.911] [info]  w
