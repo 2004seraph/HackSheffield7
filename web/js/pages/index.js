@@ -35,22 +35,22 @@ function gotoDashboard() {
 function signIn() {
     console.log("sign in")
 
-    const headers = new Headers()
-    headers.append("Content-Type", "application/json")
-    headers.append("Authorization", "Bearer " + AUTHJWT)
-    headers.append("version", "1.0")
+    // const headers = new Headers()
+    // headers.append("Content-Type", "application/json")
+    // headers.append("Authorization", "Bearer " + AUTHJWT)
+    // headers.append("version", "1.0")
 
-    const myInit = {
-        method: 'GET',
-        headers: myHeaders
-    }
+    // const myInit = {
+    //     method: 'GET',
+    //     headers: headers
+    // }
 
-    const myRequest = new Request('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/accounts/' + document.getElementById("accountID").value)
+    // const myRequest = new Request('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/accounts/' + document.getElementById("accountID").value)
 
-    fetch(myRequest, myInit)
-    .then((response) => {
-        console.log(response)
-    });
+    // fetch(myRequest, myInit)
+    // .then((response) => {
+    //     console.log(response)
+    // });
 
     next()
 }
