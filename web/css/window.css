@@ -44,4 +44,6 @@ html, body {
     height: calc(100% - env(titlebar-area-height) - 1px);
 
     padding: 10px;
+
+    overflow-y: auto;
 }

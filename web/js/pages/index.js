@@ -1,15 +1,32 @@
 "use strict"
 
-function gotoDashboard() {
-    document.getElementById("dashboard-redirect").click()
-}
+let firstTimeSetupElement = document.getElementById("first-time-set-up")
 
-let setup = new StagedConfig(document.getElementById("first-time-set-up"), () => {
-    // window.api.send("saveUserData", )
+let setup = new StagedConfig(firstTimeSetupElement, () => {
+    window.api.send("saveUserData", {
+        basicConfig: {
+            completed: true
+        }
+    })
     //save state to file
 
     gotoDashboard()
 })
+
+//check if state exists, if so, skip to dash
+window.api.sendInvoke('getUserData', null).then((data) => {
+    if (Object.hasOwn(data, "basicConfig")) {
+        if (data.basicConfig.completed) {
+            gotoDashboard()
+        }
+    }
+
+    firstTimeSetupElement.classList.remove("hidden")
+})
+
+function gotoDashboard() {
+    document.getElementById("dashboard-redirect").click()
+}
 
 function signIn() {
     console.log("sign in")
@@ -23,5 +40,3 @@ function signIn() {
 function next() {
     setup.iterate()
 }
-
-//check if state exists, if so, skip to dash

@@ -2,22 +2,21 @@
 
 const { contextBridge, ipcRenderer } = require('electron')
 
-// contextBridge.exposeInMainWorld('electronAPI', {
-    // saveUserData: (data) => {
-    //     console.log("Save")
-    //     ipcRenderer.send('saveUserData', data)
-    // }
-// })
-console.log("send")
 contextBridge.exposeInMainWorld('api', {
     send: (channel, data) => {
       console.log("send")
       ipcRenderer.send(channel, data)
     },
+    sendInvoke: (channel, data) => {
+      return ipcRenderer.invoke(channel, data)
+    },
     receive: (channel, func) => {
       ipcRenderer.on(channel, (event, ...args) => func(...args))
     },
-  })
+  }
+)
+
+//SOFTWARE INFO
 
 // window.addEventListener('DOMContentLoaded', () => {
 //     const replaceText = (selector, text) => {

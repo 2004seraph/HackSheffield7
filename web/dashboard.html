@@ -7,6 +7,8 @@
         <title>Document</title>
 
         <link rel="stylesheet" href="css/tabset-notebook.css">
+        <link rel="stylesheet" href="./css/income-report.css">
+
         <link rel="stylesheet" href="css/dashboard.css">
 
         <script src="js/lib/jquery-3.6.1.min.js"></script>
@@ -41,13 +43,32 @@
                     </div>
                     
                     <div id="Reports" class="tabset-content">
-                        4
+                        
                     </div>
                 </div>
             </div>
         </div>
-        
 
         <script src="js/pages/dashboard.js"></script>
+        <script>
+            var statement_page   = 'income-report.html'
+            var content_div = document.getElementById('Reports');
+
+            var xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    content_div.innerHTML = xmlHttp.responseText
+                } else {
+                    this.open("GET", statement_page, false)
+                    this.send(null)
+                }
+            }
+
+            xmlHttp.open("GET", statement_page, false)
+            xmlHttp.send(null)
+        </script>
+        <script src="js/pages/income-statement.js"></script>
     </body>
 </html>

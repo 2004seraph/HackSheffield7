@@ -1,9 +1,11 @@
 "use strict"
 
 const path = require('path')
+const fs = require('fs')
+
+const log = require('electron-log')
 const { app, BrowserWindow, ipcMain } = require('electron')
-const log = require('electron-log');
-const { exit } = require('process');
+const { exit } = require('process')
 
 const NODE_ENV = 'development'
 
@@ -13,6 +15,24 @@ Object.assign(console, log.functions)
 // if (NODE_ENV == "production") {
 //     Object.assign(console, log.functions)
 // }
+
+//create user data file if not exists (or if it fails to parse)
+const userDataFilePath = "UserSoleStats.json"
+var GlobalUserData = {}
+if (!fs.existsSync(userDataFilePath)) {
+    fs.writeFileSync(userDataFilePath, '{}')
+} else {
+    try {
+        GlobalUserData = JSON.parse(fs.readFileSync(userDataFilePath, {encoding:'utf8', flag:'r'}))
+    } catch {
+        fs.writeFileSync(userDataFilePath, '{}')
+    }
+}
+/**
+ * Saves the user data object to the user data path
+ * @param {object} data 
+ */
+function saveUserData(data) { fs.writeFileSync(userDataFilePath, JSON.stringify(data)) }
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -44,8 +64,11 @@ const createWindow = () => {
     })
 
     ipcMain.on('saveUserData', (event, data) => {
-        
-        return true;
+        saveUserData(data)
+        console.log("User data saved")
+    })
+    ipcMain.handle("getUserData", async (event, data) => {
+        return GlobalUserData
     })
 
     win.once('ready-to-show', () => {
@@ -74,13 +97,3 @@ app.on('window-all-closed', () => {
         console.log(error)
     }
 })
-
-
-////EVENTS
-
-function saveUserData(event, data) {
-    console.log("hello")
-    console.log(data)
-
-    exit()
-}
