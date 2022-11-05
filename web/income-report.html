@@ -2,11 +2,11 @@
 <html>
   <head>
         <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; frame-src https://www.youtube-nocookie.com/">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
 
         <title>Hello World!</title>
 
-        <link rel="stylesheet" href="incomeStyle.css">
+        <link rel="stylesheet" href="css/income-report.css">
     </head>
     <body>
         
@@ -15,7 +15,8 @@
         <p>Cash Sales: <span id="cash-sales"> [Manual Input] </span></p>
         <p>- Sales Returns: <span id="sales-returns"> - </span></p>
         <p>- Cash Returns: <span id="cash-returns"> [Manual Input] </span></p>
-
+        <p>= [TOTAL REVENUE] <span id="total-revenue"> [Total Tab] </span></p>
+        
         <hr>
 
         <h2>Less Cost of Sales</h2>
@@ -28,7 +29,23 @@
         <hr>
 
         <h2>Revenue - Cost of Sales = Gross Profit: <span id="gross-profit"> [Total Tab] </span></h2>
+
+        <hr>
+
         <h2>Other Incomes:</h2>
         <p>EG Rent Recieved <span id="other-income-example"> - </span></p>
+        <p>= [TOTAL OTHER INCOMES] <span id="total-other-incomes"> [Total Tab] </span></p>
+
+        <hr>
+
+        <h2>Expenses:</h2>
+        <p>EG Wages <span id="expenses-example"> - </span></p>
+        <p>EG Electricity <span id="expenses-example"> - </span></p>
+        <p>= [TOTAL EXPENSES] <span id="total-expenses"> [Total Tab] </span></p>
+
+        <hr>
+
+        <h2>Profit/Loss for the Year</h2>
+        <p>= [P/L] <span id="profit-loss-total"> [Total Tab] </span></p>
     </body>
 </html>
