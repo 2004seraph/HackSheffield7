@@ -1,0 +1,29 @@
+{
+  "name": "hacksheffield7",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "npx electron-builder build --win portable"
+  },
+  "homepage": "https://github.com/Sammot/HackSheffield7#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sammot/HackSheffield7.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Sammot/HackSheffield7/issues"
+  },
+  "devDependencies": {
+    "electron": "^21.2.2",
+    "electron-builder": "^23.6.0"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8"
+  }
+}
