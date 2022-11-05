@@ -6,12 +6,12 @@ class TabsetNotebook {
         this.tablinks = this.element.querySelector('.tabset-links')
         this.tabcontent = this.element.querySelector('.tabset-contents')
 
-        const tablinks_list = Array.from(this.tablinks.children)
-        const tabcontent_list = Array.from(this.tabcontent.children)
+        this.tablinks_list = Array.from(this.tablinks.children)
+        this.tabcontent_list = Array.from(this.tabcontent.children)
 
-        tablinks_list.forEach(tab => {
+        this.tablinks_list.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabcontent_list.forEach(tabInfo => {
+                this.tabcontent_list.forEach(tabInfo => {
                     tabInfo.classList.add('hidden')
                 })
 
@@ -20,5 +20,16 @@ class TabsetNotebook {
                 this.tabcontent.querySelector('#' + tab.name).classList.remove("hidden")
             })
         })
+
+        this.selectDefault()
+    }
+
+    selectDefault() {
+        //start out with all tabs hidden
+        this.tabcontent_list.forEach(tabInfo => {
+            tabInfo.classList.add('hidden')
+        })
+        //show the default tab
+        this.tablinks.querySelector('.tabset-link-default').click()
     }
 }

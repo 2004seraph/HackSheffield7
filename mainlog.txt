@@ -1,2 +1,4 @@
 [2022-11-05 13:43:00.496] [error] (node:8608) electron: Failed to load URL: file:///C:/dashboard.html with error: ERR_FILE_NOT_FOUND
 (Use `electron --trace-warnings ...` to show where the warning was created)
+[2022-11-05 16:19:20.378] [error] (node:2892) electron: Failed to load URL: file:///C:/dashboard.html with error: ERR_FILE_NOT_FOUND
+(Use `electron --trace-warnings ...` to show where the warning was created)
