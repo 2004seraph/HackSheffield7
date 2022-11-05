@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 100" style="enable-background:new 0 0 200 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#CECECE;stroke:#000000;stroke-width:0.9439;stroke-miterlimit:10;}
+	.st2{font-family:'SegoeUI-Bold';}
+	.st3{font-size:17.8601px;}
+	.st4{fill:#D3D3D3;stroke:#000000;stroke-width:1.0327;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:0.8668;stroke-miterlimit:10;}
+	.st6{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.8668;stroke-miterlimit:10;}
+	.st7{fill:#FF0000;}
+	.st8{fill:none;stroke:#000000;stroke-width:1.05;stroke-miterlimit:10;}
+	.st9{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.6129;stroke-miterlimit:10;}
+	.st10{fill:#0000FF;}
+	.st11{fill:none;stroke:#000000;stroke-width:0.7399;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#000000;stroke-width:0.2167;stroke-miterlimit:10;}
+</style>
+<g id="Warstwa_1">
+	<path class="st0" d="M188,100H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h176c6.6,0,12,5.4,12,12v76C200,94.6,194.6,100,188,100z"
+		/>
+	<path class="st1" d="M181.9,97.19H15.78c-6.23,0-11.33-5.1-11.33-11.33V14.13c0-6.23,5.1-11.33,11.33-11.33H181.9
+		c6.23,0,11.33,5.1,11.33,11.33v71.73C193.23,92.1,188.13,97.19,181.9,97.19z"/>
+	<text transform="matrix(0.9289 0 0 1 87.8794 53.9248)" class="st2 st3">DASHBOARD</text>
+</g>
+<g id="Warstwa_2">
+	<rect x="10.55" y="21.82" class="st4" width="73.51" height="56.37"/>
+	<path class="st5" d="M10.55,50h73.51H10.55z"/>
+	<rect x="18.28" y="24.3" class="st6" width="57.54" height="20.3"/>
+	<path class="st7" d="M75.52,26.66c-2.87,2.58-5.84,5.05-8.88,7.43c-4.04-2.65-8.04-5.37-11.97-8.18c-0.11-0.08-0.32-0.08-0.44,0
+		c-4.2,3-8.39,6-12.59,9.01c-2.86-2.36-5.72-4.72-8.58-7.08c-0.17-0.14-0.45-0.19-0.61,0c-4.51,5.38-9.17,10.62-13.99,15.73
+		c-0.38,0.41,0.23,1.02,0.61,0.61c4.73-5.01,9.3-10.16,13.74-15.43c2.84,2.34,5.67,4.68,8.51,7.02c0.14,0.11,0.36,0.19,0.52,0.07
+		c4.2-3.01,8.4-6.01,12.61-9.02c3.94,2.81,7.94,5.54,11.99,8.19c0.18,0.12,0.38,0.05,0.52-0.07c3.15-2.44,6.2-4.99,9.17-7.66
+		C76.55,26.9,75.93,26.29,75.52,26.66z"/>
+	<polyline class="st8" points="76.33,44.6 18.28,44.6 18.28,23.8 	"/>
+	<rect x="18.28" y="54.18" class="st9" width="28.77" height="20.3"/>
+	<rect x="20.66" y="66.66" class="st10" width="4.7" height="7.82"/>
+	<rect x="26.3" y="57.31" class="st7" width="4.7" height="17.17"/>
+	<rect x="34.48" y="64.33" class="st10" width="4.7" height="10.15"/>
+	<rect x="40.18" y="60.58" class="st7" width="4.7" height="13.9"/>
+	<polyline class="st11" points="47.37,74.48 18.28,74.48 18.28,53.87 	"/>
+	<g id="XMLID_1_">
+		<g>
+			<path class="st7" d="M64.14,54.03c5.69,0,10.31,4.61,10.31,10.31c0,5.69-4.62,10.3-10.31,10.3c-2.44,0-4.71-0.86-6.47-2.29
+				l6.47-8.01V54.03z"/>
+			<path class="st10" d="M64.14,54.03v10.31l-6.47,8.01c-2.33-1.88-3.83-4.77-3.83-8.01C53.83,58.64,58.44,54.03,64.14,54.03z"/>
+		</g>
+		<g>
+			<path class="st12" d="M64.14,54.03c5.69,0,10.31,4.61,10.31,10.31c0,5.69-4.62,10.3-10.31,10.3c-2.44,0-4.71-0.86-6.47-2.29
+				c-2.33-1.88-3.83-4.77-3.83-8.01C53.83,58.64,58.44,54.03,64.14,54.03z"/>
+			<line class="st12" x1="64.14" y1="54.03" x2="64.14" y2="64.34"/>
+			<line class="st12" x1="57.66" y1="72.35" x2="64.14" y2="64.34"/>
+		</g>
+	</g>
+</g>
+</svg>
