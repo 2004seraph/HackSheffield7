@@ -81,7 +81,9 @@ function updateCostOfSalesSection(purchases, openingInventory, purchaseReturns, 
     this.netCostOfSales.textContent = netCostOfSales
 }
 
-
+function updateGrossProfit(grossProfit){
+    this.grossProfit.textContent = grossProfit
+}
 
 
 // FUNCTION CALLS TO UDPATE EVERYTHING
@@ -92,4 +94,4 @@ updateRevenueSection(400, 0, 0, 0, 400)
 
 updateCostOfSalesSection(300, 0, 100, 0, 200)
 
-
+updateGrossProfit(6000)
