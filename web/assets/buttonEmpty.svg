@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 100" style="enable-background:new 0 0 200 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:url(#SVGID_1_);stroke:#000000;stroke-width:0.9439;stroke-miterlimit:10;}
+	.st2{font-family:'SegoeUI-Bold';}
+	.st3{font-size:34.4049px;}
+</style>
+<path class="st0" d="M188,100H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h176c6.6,0,12,5.4,12,12v76C200,94.6,194.6,100,188,100z"
+	/>
+<radialGradient id="SVGID_1_" cx="100" cy="50" r="93.355" gradientTransform="matrix(1 0 0 1.0929 0 -4.6475)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#00FFBF"/>
+	<stop  offset="1" style="stop-color:#008C8C"/>
+</radialGradient>
+<path class="st1" d="M183.06,97.19H16.94c-6.23,0-11.33-5.1-11.33-11.33V14.13c0-6.23,5.1-11.33,11.33-11.33h166.12
+	c6.23,0,11.33,5.1,11.33,11.33v71.73C194.39,92.1,189.29,97.19,183.06,97.19z"/>
+<text transform="matrix(0.9289 0 0 1 50.5034 65.0869)" class="st2 st3">[TEXT]</text>
+</svg>
