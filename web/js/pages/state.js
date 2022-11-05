@@ -6,7 +6,7 @@ class ProgramState {
 
         accountID: -1,
         businessName: "",
-        financialYearEnd: {}
+        financialYearEnd: ""
     }
 
     /**
@@ -23,7 +23,7 @@ class ProgramState {
      * A factory method for a fresh program state
      * @returns A new program state instance
      */
-    static CreateNew() {
+    static create() {
         return new ProgramState()
     }
 }

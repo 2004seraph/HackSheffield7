@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./css/index.css">
 
         <script src="./js/static/stage.js"></script>
+        <script src="./js/pages/state.js"></script>
     </head>
     <body>
         <a href="./dashboard.html" class="hidden" id="dashboard-redirect"></a>
@@ -21,6 +22,7 @@
                 <div>
                     <h1>Welcome to SoleStats</h1>
                     <h2>Please sign into your capital one account.</h2>
+                    <input id="accountID" type="text" required="required" maxlength="10" placeholder="Account ID (for now)">
 
                     <button onclick="signIn()">Sign in</button>
                 </div>
@@ -28,14 +30,25 @@
                     <h1>Information about your company</h1>
 
                     <h2>Name</h2>
+                    <input id="businessName" type="text" required="required" maxlength="60" placeholder="Wonder Corp">
+
                     <h2>Financial Year End</h2>
+                    <input id="finyeardate" type="date" required="required">
+
 
                     <button onclick="next()">Continue</button>
                 </div>
                 <div>
                     <h1>Preferences</h1>
-                    <h2>Statement styling</h2>
 
+                    <h2>Income Statements</h2>
+
+                    <label for="Style">Style</label>
+                    <select name="Style" id="statement-style">
+                        <option value="UK">UK</option>
+                    </select>
+
+                    
                     <button onclick="next()">Continue</button>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 "use strict"
 
+let UserDataCache = {basicConfig: {}}
+
 let firstTimeSetupElement = document.getElementById("first-time-set-up")
 
 let setup = new StagedConfig(firstTimeSetupElement, () => {
-    window.api.send("saveUserData", {
-        basicConfig: {
-            completed: true
-        }
-    })
+    UserDataCache.basicConfig.completed = true
+
+    window.api.send("saveUserData", UserDataCache)
     //save state to file
 
     gotoDashboard()
@@ -18,10 +18,14 @@ window.api.sendInvoke('getUserData', null).then((data) => {
     if (Object.hasOwn(data, "basicConfig")) {
         if (data.basicConfig.completed) {
             gotoDashboard()
+        } else {
+            UserDataCache = ProgramState.create()
+            firstTimeSetupElement.classList.remove("hidden")
         }
+    } else {
+        UserDataCache = ProgramState.create()
+        firstTimeSetupElement.classList.remove("hidden")
     }
-
-    firstTimeSetupElement.classList.remove("hidden")
 })
 
 function gotoDashboard() {
@@ -38,5 +42,17 @@ function signIn() {
 }
 
 function next() {
+    switch (setup.stage) {
+        case 0:
+            UserDataCache.basicConfig.accountID = document.getElementById("accountID").value
+            break
+        case 1:
+            UserDataCache.basicConfig.businessName = document.getElementById("businessName").value
+            UserDataCache.basicConfig.financialYearEnd = document.getElementById("finyeardate").value
+            break
+        case 2:
+            break
+    }
+
     setup.iterate()
 }
