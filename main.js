@@ -1,5 +1,6 @@
 "use strict"
 
+const unirest = require('unirest')
 const path = require('path')
 const fs = require('fs')
 
