@@ -4,6 +4,9 @@ let setup = new StagedConfig(document.getElementById("first-time-set-up"), () =>
 
 function signIn() {
     console.log("sign in")
+
+    // window.api.send("saveUserData", "penis")
+
     next()
 }
 

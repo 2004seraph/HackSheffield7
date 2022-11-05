@@ -1,13 +1,18 @@
 "use strict"
 
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const log = require('electron-log');
+const { exit } = require('process');
 
 const NODE_ENV = 'development'
 
+//file logging
 log.transports.file.resolvePath = () => path.join(__dirname, 'mainlog.txt')
 Object.assign(console, log.functions)
+// if (NODE_ENV == "production") {
+//     Object.assign(console, log.functions)
+// }
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -26,11 +31,21 @@ const createWindow = () => {
         autoHideMenuBar: true,
 
         webPreferences: {
-            devTools: (NODE_ENV == "development") ? true : false,
-            preload: path.join(__dirname, 'preload.js')
+            enableBlinkFeatures: false,
+            contextIsolation:  true,
+            backgroundThrottling: false,
+            
+            preload: path.join(__dirname, 'preload.js'),
+
+            devTools: (NODE_ENV == "development") ? true : false
         },
 
         show: false
+    })
+
+    ipcMain.on('saveUserData', (event, data) => {
+        
+        return true;
     })
 
     win.once('ready-to-show', () => {
@@ -41,6 +56,10 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+    console.log("w")
+    // ipcMain.on('load-user-data', loadUserData)
+    // ipcMain.on('export-income-statement', exportIncomeStatement)
+
     createWindow()
   
     app.on('activate', () => {
@@ -55,3 +74,13 @@ app.on('window-all-closed', () => {
         console.log(error)
     }
 })
+
+
+////EVENTS
+
+function saveUserData(event, data) {
+    console.log("hello")
+    console.log(data)
+
+    exit()
+}
