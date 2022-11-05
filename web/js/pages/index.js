@@ -11,7 +11,7 @@ let setup = new StagedConfig(firstTimeSetupElement, () => {
 
 //check if state exists, if so, skip to dash
 window.api.sendInvoke('getUserData', null).then((data) => {
-    // if (data.hasOwn(""))
+    if (data.hasOwn("basicConfig"))
 
     firstTimeSetupElement.classList.remove("hidden")
 })
