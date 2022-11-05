@@ -3,7 +3,11 @@
 let firstTimeSetupElement = document.getElementById("first-time-set-up")
 
 let setup = new StagedConfig(firstTimeSetupElement, () => {
-    // window.api.send("saveUserData", )
+    window.api.send("saveUserData", {
+        basicConfig: {
+            completed: true
+        }
+    })
     //save state to file
 
     gotoDashboard()
@@ -11,7 +15,11 @@ let setup = new StagedConfig(firstTimeSetupElement, () => {
 
 //check if state exists, if so, skip to dash
 window.api.sendInvoke('getUserData', null).then((data) => {
-    // if (data.hasOwn("basicConfig"))
+    if (Object.hasOwn(data, "basicConfig")) {
+        if (data.basicConfig.completed) {
+            gotoDashboard()
+        }
+    }
 
     firstTimeSetupElement.classList.remove("hidden")
 })

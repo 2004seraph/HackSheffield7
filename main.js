@@ -28,6 +28,11 @@ if (!fs.existsSync(userDataFilePath)) {
         fs.writeFileSync(userDataFilePath, '{}')
     }
 }
+/**
+ * Saves the user data object to the user data path
+ * @param {object} data 
+ */
+function saveUserData(data) { fs.writeFileSync(userDataFilePath, JSON.stringify(data)) }
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -59,10 +64,9 @@ const createWindow = () => {
     })
 
     ipcMain.on('saveUserData', (event, data) => {
+        saveUserData(data)
         console.log("User data saved")
-        return true;
     })
-
     ipcMain.handle("getUserData", async (event, data) => {
         return GlobalUserData
     })
@@ -93,13 +97,3 @@ app.on('window-all-closed', () => {
         console.log(error)
     }
 })
-
-
-////EVENTS
-
-function saveUserData(event, data) {
-    console.log("hello")
-    console.log(data)
-
-    exit()
-}
