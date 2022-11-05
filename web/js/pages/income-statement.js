@@ -5,7 +5,6 @@ var cashSales = document.getElementById("cash-sales")
 var salesReturns = document.getElementById("sales-returns")
 var cashReturns = document.getElementById("cash-returns")
 var netRevenue = document.getElementById("net-revenue")
-var revenueSectionElements = [cashSales, salesReturns, cashReturns]
 
 var purchases = document.getElementById("purchases")
 var openingInventory = document.getElementById("opening-inventory")
@@ -55,14 +54,42 @@ function updateRevenueSection(creditSales, cashSales, salesReturns, cashReturns,
 }
 
 function updateCostOfSalesSection(purchases, openingInventory, purchaseReturns, closingInventory, netCostOfSales){
+    //if any of the below are 0, they are deleted off of the IS, unless it is purchases
+    this.purchases.textContent = purchases
 
+    if(openingInventory != 0){
+        this.openingInventory.textContent = openingInventory
+    }
+    else{
+        this.openingInventory.parentElement.parentElement.parentNode.removeChild(this.openingInventory.parentNode.parentNode)
+    }
+
+    if(purchaseReturns != 0){
+        this.purchaseReturns.textContent = purchaseReturns
+    }
+    else{
+        this.purchaseReturns.parentElement.parentElement.parentNode.removeChild(this.purchaseReturns.parentNode.parentNode)
+    }
+
+    if(closingInventory != 0){
+        this.closingInventory.textContent = closingInventory
+    }
+    else{
+        this.closingInventory.parentElement.parentElement.parentNode.removeChild(this.closingInventory.parentNode.parentNode)
+    }
+
+    this.netCostOfSales.textContent = netCostOfSales
 }
+
+
 
 
 // FUNCTION CALLS TO UDPATE EVERYTHING
 
 updateTitle("Jakub Bala", "22/04/22")
 
-updateRevenueSection(400, 0, 0, 0, 0)
+updateRevenueSection(400, 0, 0, 0, 400)
+
+updateCostOfSalesSection(300, 0, 100, 0, 200)
 
 
