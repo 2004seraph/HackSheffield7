@@ -9,7 +9,8 @@
     "start": "electron .",
     "start-safe": "electron . --disable-gpu-sandbox --no-sandbox",
     "build": "npx electron-builder build --win portable",
-    "createDummyAccounts": "node scripts.js 2 100"
+    "createAccounts": "node scripts.js createAccounts 2 100",
+    "listAccounts": "node scripts.js listAccounts"
   },
   "homepage": "https://github.com/Sammot/HackSheffield7#readme",
   "repository": {
