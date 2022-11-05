@@ -2,27 +2,52 @@
 <html>
   <head>
         <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; frame-src https://www.youtube-nocookie.com/">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; frame-src https://www.youtube-nocookie.com/"> -->
 
         <title>Hello World!</title>
 
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="./css/index.css">
+
+        <script src="./js/static/stage.js"></script>
     </head>
     <body>
+        <a href="./dashboard.html" class="hidden" id="dashboard-redirect"></a>
         <div id="window-titlebar">
             <h1>SoleStats</h1>
         </div>
 
         <div id="window-content">
+            <div id="first-time-set-up">
+                <div>
+                    <h1>Welcome to SoleStats</h1>
+                    <h2>Please sign into your capital one account.</h2>
 
-            <a href="./dashboard.html">dash</a>
-        
-            <!-- <h2>Software Information</h2>
+                    <button onclick="signIn()">Sign in</button>
+                </div>
+                <div>
+                    <h1>Information about your company</h1>
+
+                    <button onclick="next()">Sign in</button>
+                </div>
+                <div>
+                    <h1>Preferences</h1>
+
+                    <button onclick="next()">Sign in</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/pages/index.js"></script>
+    </body>
+
+    <!-- <h2>Software Information</h2>
             <ul>
                 <li>Node.js: <span id="node-version"></span></li>
                 <li>Chromium: <span id="chrome-version"></span></li>
                 <li>Electron: <span id="electron-version"></span></li>
+
+                eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE2NjI0MjI0MDAsImFwaV9zdWIiOiIzNzU5NzA2ZjQxMGMyMTdjODYyMTZhOGZhZGIzMDY1NDc0YmRmZjNkNDdiNDg5ZGM1OTk1NzQyYTE0ZTY5ZDQxMTY3NTEyMzIwMDAwMCIsInBsYyI6IjVkY2VjNzRhZTk3NzAxMGUwM2FkNjQ5NSIsImV4cCI6MTY3NTEyMzIwMCwiZGV2ZWxvcGVyX2lkIjoiMzc1OTcwNmY0MTBjMjE3Yzg2MjE2YThmYWRiMzA2NTQ3NGJkZmYzZDQ3YjQ4OWRjNTk5NTc0MmExNGU2OWQ0MSJ9.Mijhmrl5GOeD6qrSpj4NHZlT3hx6DT8WE-OqP-5kwcS7EIA_DScaaRVpqCflKJraLbFaNXz7DJR6lliN9VrQJvnu-4aLQonFfazLk8Nf8Fujd2C81Z-BenNSTY1PApFS18WVHaS2VNolC_UufXNfCigBDkr5emEB1Q52gLdQBPdGb_YMO04g0ln5YNIe0YARzDniT37NjF6rux6iguUbajGF35hVJkzIfpvMPz-FCXcehBsocPAhUyhakeBS-0cjeCcTTRMAgB_O3zKPSQ6QyOtVjQsqxIS6rRThTk1hu9pbRvR4amoe73ZYt_yjFYQM68IYdpRldZi9kjnGhdrUKQ
+
             </ul> -->
-        </div>
-    </body>
 </html>
+
