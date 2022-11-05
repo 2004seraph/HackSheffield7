@@ -7,7 +7,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
+    "start": "electron . --disable-gpu-sandbox --no-sandbox",
     "build": "npx electron-builder build --win portable"
   },
   "homepage": "https://github.com/Sammot/HackSheffield7#readme",

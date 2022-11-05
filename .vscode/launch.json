@@ -10,7 +10,7 @@
             "windows": {
                 "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
             },
-            "args" : [".", "--unhandled-rejections=strict"],
+            "args" : [".", "--unhandled-rejections=strict", "--disable-gpu-sandbox", "--no-sandbox"],
             "outputCapture": "std"
         }
     ]
