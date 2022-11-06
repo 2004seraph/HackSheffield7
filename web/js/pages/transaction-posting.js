@@ -93,7 +93,7 @@ function updateIncomeStatement(allUserData){
 
     updateTitle(allUserData.basicConfig.businessName, allUserData.basicConfig.financialYearEnd);
 
-    updateRevenueSection(400, 0, 0, 0, 400);
+    updateRevenueSection(400, 0, (150), 0, 250);
 
     updateCostOfSalesSection(300, 0, 100, 0, 200);
 
