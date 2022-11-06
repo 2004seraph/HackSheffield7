@@ -1,6 +1,5 @@
 "use strict";
-
-let UserDataCache = { basicConfig: {} };
+let UserDataCache = {};
 
 let firstTimeSetupElement = document.getElementById("first-time-set-up");
 
@@ -9,14 +8,18 @@ let setup = new StagedConfig(firstTimeSetupElement, () => {
 
   window.api.send("saveUserData", UserDataCache);
   //save state to file
-
-  gotoDashboard();
 });
+
+window.api.receive("dataSaved", (event, data) => {
+  console.log("saved")
+  gotoDashboard();
+})
 
 //check if state exists, if so, skip to dash
 window.api.sendInvoke("getUserData", null).then((data) => {
   if (Object.hasOwn(data, "basicConfig")) {
     if (data.basicConfig.completed) {
+      console.log(data)
       gotoDashboard();
     } else {
       UserDataCache = ProgramState.create();
