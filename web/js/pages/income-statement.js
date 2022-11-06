@@ -171,6 +171,16 @@ function AddEntryToExpenses(name, value) {
   }
 }
 
+// function print() {
+//   var newcontent = document.getElementById("report-container").innerHTML;
+//   var actContents = document.body.innerHTML;
+//   document.body.innerHTML = newcontent;
+//   console.log("asd");
+//   window.print();
+//   console.log("xcv");
+//   document.body.innerHTML = actContents;
+// }
+
 // FUNCTION CALLS TO UDPATE EVERYTHING
 
 updateTitle("Jakub Bala", "22/04/22");

@@ -5,12 +5,17 @@
 </head>
 
 <body>
+
     <div id="content-report-page">
-        <div id="report-container">
+        <div id="report-header">
+            <button title="PRINT" onclick='window.print();'> PRINT
+            </button>
+        </div>
+        <div id="report-container" class="print">
 
             <div id="report-title-div">
-                <h1 id="report-heading"><span id="report-title">Income Statement for Jakub Bala for the Year Ended
-                        05/11/2022</span></h1>
+                <h1 id="report-heading"><span id="report-title">Income Statement for [name] for the Year Ended
+                        [date]</span></h1>
             </div>
 
             <table id="report-table">
@@ -156,6 +161,7 @@
             </table>
         </div>
     </div>
+
 
 
 
