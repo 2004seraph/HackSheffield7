@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/tabset-notebook.css">
     <link rel="stylesheet" href="./css/transactions.css">
     <link rel="stylesheet" href="./css/income-report.css">
+    <link rel="stylesheet" href="./css/tag.css">
     <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
 
     <link rel="stylesheet" href="css/dashboard.css" />
@@ -31,16 +32,16 @@
             <div class="tabset-header">
                 <div class="tabset-links">
                     <button class="tabset-link tabset-link-default" name="Dashboard">
-                        <img src="assets/buttonDash.svg" height="auto" width="auto" alt="Dashboard" />
+                        <img src="assets/buttonDash.svg" height="50px" width="auto" alt="Dashboard" />
                     </button>
                     <button class="tabset-link" name="Tags">
-                        <img src="assets/buttonTags.svg" height="auto" width="auto" alt="Tags" />
+                        <img src="assets/buttonTags.svg" height="50px" width="auto" alt="Tags" />
                     </button>
                     <button class="tabset-link" name="Transactions">
-                        <img src="assets/buttonTransactions.svg" height="auto" width="auto" alt="Transactions" />
+                        <img src="assets/buttonTransactions.svg" height="50px" width="auto" alt="Transactions" />
                     </button>
                     <button class="tabset-link" name="Reports">
-                        <img src="assets/buttonStatement.svg" height="auto" width="auto" alt="Reports" />
+                        <img src="assets/buttonStatement.svg" height="50px" width="auto" alt="Reports" />
                     </button>
                 </div>
             </div>
@@ -50,8 +51,12 @@
                 </div>
 
                 <div id="Tags" class="tabset-content">
-                    <div id="create-tag">
-                        <input type="text" placeholder="name" maxlength="30">
+                    <div id="tag-pane">
+                        <div id="tag-list">
+                        </div>
+                        <div id="create-tag">
+                            <input type="text" placeholder="name" maxlength="30">
+                        </div>
                     </div>
                 </div>
 

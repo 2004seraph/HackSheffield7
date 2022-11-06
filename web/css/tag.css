@@ -1,3 +1,23 @@
+#Tags {
+    justify-content: flex-start;
+}
+
+#tag-pane {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
 #create-tag {
+    flex: 1;
+
+    background-color: aqua;
+}
+
+#tag-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     
+    background-color: rgb(25, 0, 116);
 }
