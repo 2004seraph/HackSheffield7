@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
 
-        <title>Sole Accounts Manager</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
 
-        <link rel="stylesheet" href="./css/index.css">
+    <title>Sole Accounts Manager</title>
 
-        <script src="./js/static/globals.js"></script>
-        <script src="./js/static/stage.js"></script>
-        <script src="./js/pages/state.js"></script>
-    </head>
-    <body>
-        <a href="./dashboard.html" class="hidden" id="dashboard-redirect"></a>
-        <div id="window-titlebar">
-            <h1>SoleStats</h1>
-        </div>
+    <link rel="stylesheet" href="./css/index.css" />
 
-        <div id="window-content">
-            <div class="hidden" id="first-time-set-up">
-                <div>
-                    <h1>Welcome to SoleStats</h1>
-                    <h2>Please sign into your capital one account.</h2>
-                    <input id="accountID" type="text" required="required" maxlength="10" placeholder="Account ID (for now)">
+    <script src="./js/static/globals.js"></script>
+    <script src="./js/static/stage.js"></script>
+    <script src="./js/pages/state.js"></script>
+</head>
 
-                    <button onclick="signIn()">Sign in</button>
-                </div>
-                <div>
-                    <h1>Information about your company</h1>
+<body>
+    <a href="./dashboard.html" class="hidden" id="dashboard-redirect"></a>
+    <div id="window-titlebar">
+        <img id="window-titlebar-logo" src="assets/logo.svg" width="auto" height="auto" alt="Logo" />
+        <h1>Sole Accounts Manager</h1>
+    </div>
 
-                    <h2>Name</h2>
-                    <input id="businessName" type="text" required="required" maxlength="60" placeholder="Wonder Corp">
+    <div id="window-content">
+        <div class="hidden" id="first-time-set-up">
+            <div>
+                <h1>Welcome to S.A.M.</h1>
+                <h2>Please sign into your capital one account.</h2>
+                <input id="accountID" type="text" required="required" maxlength="10"
+                    placeholder="Account ID (for now)" />
 
-                    <h2>Financial Year End</h2>
-                    <input id="finyeardate" type="date" required="required">
+                <button onclick="signIn()">Sign in</button>
+            </div>
+            <div>
+                <h1>Information about your company</h1>
 
+                <h2>Name</h2>
+                <input id="businessName" type="text" required="required" maxlength="60" placeholder="Wonder Corp" />
 
-                    <button onclick="next()">Continue</button>
-                </div>
-                <div>
-                    <h1>Preferences</h1>
+                <h2>Financial Year End</h2>
+                <input id="finyeardate" type="date" required="required" />
 
-                    <h2>Income Statements</h2>
+                <button onclick="next()">Continue</button>
+            </div>
+            <div>
+                <h1>Preferences</h1>
 
-                    <label for="Style">Style</label>
-                    <select name="Style" id="statement-style">
-                        <option value="UK">UK</option>
-                    </select>
+                <h2>Income Statements</h2>
 
-                    
-                    <button onclick="next()">Continue</button>
-                </div>
+                <label for="Style">Style</label>
+                <select name="Style" id="statement-style">
+                    <option value="UK">UK</option>
+                </select>
+
+                <button onclick="next()">Continue</button>
             </div>
         </div>
+    </div>
 
-        <script src="./js/pages/index.js"></script>
-    </body>
+    <script src="./js/pages/index.js"></script>
+</body>
 
-    <!-- <h2>Software Information</h2>
+<!-- <h2>Software Information</h2>
             <ul>
                 <li>Node.js: <span id="node-version"></span></li>
                 <li>Chromium: <span id="chrome-version"></span></li>
@@ -67,5 +69,5 @@
                 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE2NjI0MjI0MDAsImFwaV9zdWIiOiIzNzU5NzA2ZjQxMGMyMTdjODYyMTZhOGZhZGIzMDY1NDc0YmRmZjNkNDdiNDg5ZGM1OTk1NzQyYTE0ZTY5ZDQxMTY3NTEyMzIwMDAwMCIsInBsYyI6IjVkY2VjNzRhZTk3NzAxMGUwM2FkNjQ5NSIsImV4cCI6MTY3NTEyMzIwMCwiZGV2ZWxvcGVyX2lkIjoiMzc1OTcwNmY0MTBjMjE3Yzg2MjE2YThmYWRiMzA2NTQ3NGJkZmYzZDQ3YjQ4OWRjNTk5NTc0MmExNGU2OWQ0MSJ9.Mijhmrl5GOeD6qrSpj4NHZlT3hx6DT8WE-OqP-5kwcS7EIA_DScaaRVpqCflKJraLbFaNXz7DJR6lliN9VrQJvnu-4aLQonFfazLk8Nf8Fujd2C81Z-BenNSTY1PApFS18WVHaS2VNolC_UufXNfCigBDkr5emEB1Q52gLdQBPdGb_YMO04g0ln5YNIe0YARzDniT37NjF6rux6iguUbajGF35hVJkzIfpvMPz-FCXcehBsocPAhUyhakeBS-0cjeCcTTRMAgB_O3zKPSQ6QyOtVjQsqxIS6rRThTk1hu9pbRvR4amoe73ZYt_yjFYQM68IYdpRldZi9kjnGhdrUKQ
 
             </ul> -->
-</html>
 
+</html>
