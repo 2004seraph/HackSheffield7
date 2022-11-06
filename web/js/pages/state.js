@@ -14,10 +14,10 @@ class ProgramState {
     /**
      * List of type Transaction
      */
-    transactions = []
+    transactions = {}
 
     /**
-     * List of type Tag
+     * Map of type Tag
      */
     tags = []
 

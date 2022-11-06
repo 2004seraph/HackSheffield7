@@ -8,15 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="css/tabset-notebook.css">
+    <link rel="stylesheet" href="./css/tabset-notebook.css">
     <link rel="stylesheet" href="./css/transactions.css">
     <link rel="stylesheet" href="./css/income-report.css">
+    <link rel="stylesheet" href="./css/tag.css">
     <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
-
-    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
 
     <script src="js/lib/jquery-3.6.1.min.js"></script>
+
     <script src="js/static/tabset-notebook.js"></script>
+    <script src="js/pages/transaction.js"></script>
     <script src="js/pages/transaction-posting.js"></script>
 </head>
 
@@ -31,16 +33,16 @@
             <div class="tabset-header">
                 <div class="tabset-links">
                     <button class="tabset-link tabset-link-default" name="Dashboard">
-                        <img src="assets/buttonDash.svg" height="auto" width="auto" alt="Dashboard" />
+                        <img src="assets/buttonDash.svg" height="50px" width="auto" alt="Dashboard" />
                     </button>
                     <button class="tabset-link" name="Tags">
-                        <img src="assets/buttonTags.svg" height="auto" width="auto" alt="Tags" />
+                        <img src="assets/buttonTags.svg" height="50px" width="auto" alt="Tags" />
                     </button>
                     <button class="tabset-link" name="Transactions">
-                        <img src="assets/buttonTransactions.svg" height="auto" width="auto" alt="Transactions" />
+                        <img src="assets/buttonTransactions.svg" height="50px" width="auto" alt="Transactions" />
                     </button>
                     <button class="tabset-link" name="Reports">
-                        <img src="assets/buttonStatement.svg" height="auto" width="auto" alt="Reports" />
+                        <img src="assets/buttonStatement.svg" height="50px" width="auto" alt="Reports" />
                     </button>
                 </div>
             </div>
@@ -50,8 +52,27 @@
                 </div>
 
                 <div id="Tags" class="tabset-content">
-                    <div id="create-tag">
-                        <input type="text" placeholder="name" maxlength="30">
+                    <div id="tag-pane">
+                        <div id="tag-list">
+                        </div>
+                        <div id="create-tag">
+                            <h2>Create a custom tag</h2>
+                            <input id="create-tag-name" type="text" placeholder="Name" maxlength="30">
+                            <input id="create-tag-desc" type="text" placeholder="Description" maxlength="50">
+                            <input id="create-tag-excl" type="checkbox">
+
+                            <label for="create-tag-type">Type</label>
+                            <select id="create-tag-type" name="create-tag-type">
+                                <option value="Expense">Expense</option>
+                                <option value="Purchases">Purchases</option>
+                                <option value="Sales">Sales</option>
+                                <option value="OtherIncome">Other Income</option>
+                                <option value="SalesReturns">Sales Returns</option>
+                                <option value="PurchaseReturns">Purchase Returns</option>
+                            </select>
+
+                            <button onclick="createTag()">Create</button>
+                        </div>
                     </div>
                 </div>
 
@@ -85,8 +106,6 @@
 
             // xmlHttp.send(null)
     </script>
-    <script src="js/pages/transaction.js"></script>
-
     <script>
         var statement_page = 'income-report.html'
         var content_div = document.getElementById('income-report-document');
@@ -107,6 +126,7 @@
     </script>
     <script src="js/pages/transaction-page.js"></script>
     <script src="js/pages/income-statement.js"></script>
+    <script src="js/pages/tag-page.js"></script>
 </body>
 
 </html>
