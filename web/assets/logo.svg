@@ -41,8 +41,8 @@
 <g id="XMLID_2_">
 	<g>
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="255.6561" y1="197.0197" x2="255.6561" y2="480.1233">
-			<stop  offset="0" style="stop-color:#00FFBF"/>
-			<stop  offset="1" style="stop-color:#00F0F0"/>
+			<stop  offset="0" style="stop-color:#37FF9B"/>
+			<stop  offset="1" style="stop-color:#3F62FF"/>
 		</linearGradient>
 		<path class="st4" d="M399.29,424.93c3,10.7-3.73,24.62-15.53,26.82c-21.86,4.08-44.08,6.3-66.35,5.61
 			c-21.43-0.64-42.27-4.78-63.43-7.66c-40.76-5.58-81.8,7.64-122.04-4.27c-16.54-4.89-21.07-24.22-9.81-36.46

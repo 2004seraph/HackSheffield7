@@ -6,8 +6,10 @@ html, body {
     margin: 0;
 
     background: rgb(75, 75, 75);
-    background: rgb(0, 255, 191);
-    background: linear-gradient(0deg, rgb(0, 240, 240) 0%, rgb(0, 255, 191) 100%),url("../assets/background.svg");
+    background: rgb(0,
+        47,
+        255);
+    background: linear-gradient(0deg, rgb(63, 98, 255) 0%, rgb(55, 255, 155) 100%),url("../assets/background.svg");
     background-size: 250px;
     
 
