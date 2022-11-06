@@ -19,8 +19,8 @@ class TabsetNotebook {
                     tabInfo.classList.add('hidden')
                 })
 
-                console.log("click: " + tab.name + " " + this.tabcontent + " " + this.tabcontent.id)
-                console.log(this.tabcontent.querySelector('#' + tab.name))
+                // console.log("click: " + tab.name + " " + this.tabcontent + " " + this.tabcontent.id)
+                // console.log(this.tabcontent.querySelector('#' + tab.name))
                 this.tabcontent.querySelector('#' + tab.name).classList.remove("hidden")
             })
         })
