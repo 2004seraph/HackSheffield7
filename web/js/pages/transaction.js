@@ -11,25 +11,30 @@ class Transaction {
     overridedAmount = false;
     valueSign = "pos";
 
-    constructor() {
-        if(amount > 0) {
-            valueSign = "pos";
+    constructor(data) {
+        this.rawTransactionData = data
+
+        if(data.amount > 0) {
+            this.valueSign = "pos";
         } else {
-            valueSign = "neg";
+            this.valueSign = "neg";
         }
+
+        this.html = `
+        <div class="transaction-div">
+            <div class="date-and-tag">
+                <span class="tr-date">` + data.timestamp + `</span><span class="tr-tag">` + this.tag + `</span>
+            </div>
+            <div class="name-and-amount">
+                <span class="tr-name">` + data.message + `</span><span class="tr-amount value-` + this.valueSign + `">£` + data.amount + `</span>
+            </div>
+            <div class="tr-reference">
+                ` + data.message + `
+            </div>
+        </div>`;
     }
 
-    html = `<div class="transaction-div">\
-                <div class="date-and-tag">\
-                    <span class="tr-date">{date}</span><span class="tr-tag">{tag}</span>\
-                </div>\
-                <div class="name-and-amount">\
-                    <span class="tr-name">{name}</span><span class="tr-amount value-{valueSign}">£{amount}</span>\
-                </div>\
-                <div class="tr-reference">\
-                    {reference}\
-                </div>\
-            </div>`;
+    
 
 
 
@@ -37,9 +42,9 @@ class Transaction {
      * Transaction factory method
      * @returns a new Transaction instance with default values
      */
-    static create() {
-        t = new Transaction();
-        t.append();
+    static create(data) {
+        let t = new Transaction(data);
+        // t.append();
         return t;
     };
 

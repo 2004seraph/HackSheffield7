@@ -38,8 +38,9 @@ window.api.receive("transactionData", (event, data) => {
   document.getElementById("info").classList.remove("hidden");
 
   let transactions = JSON.parse(data)
+  console.log(transactions)
   for (let element of transactions.Transactions) {
-    
+    UserDataCache.transactions.push(Transaction.create(element))
   }
 })
 
