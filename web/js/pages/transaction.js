@@ -1,22 +1,25 @@
 "use strict";
-console.log("asd");
+
 class Transaction {
     rawTransactionData = {};
 
     tag = null;
-    date = null;
-    name = null;
-    amount = 0;
+    // date = null;
+    // name = null;
+    // amount = 0;
     reference = null;
     overridedAmount = false;
     valueSign = "pos";
-    if(amount > 0) {
-    valueSign = "pos";
-} else {
-    valueSign = "neg";
-}
 
-html = `<div class="transaction-div">\
+    constructor() {
+        if(amount > 0) {
+            valueSign = "pos";
+        } else {
+            valueSign = "neg";
+        }
+    }
+
+    html = `<div class="transaction-div">\
                 <div class="date-and-tag">\
                     <span class="tr-date">{date}</span><span class="tr-tag">{tag}</span>\
                 </div>\
@@ -34,15 +37,16 @@ html = `<div class="transaction-div">\
      * Transaction factory method
      * @returns a new Transaction instance with default values
      */
-    function create() {
-    t = new Transaction();
-    t.append();
-    return t;
-};
-    void append(){
-    document.getElementById("transactions-container").appendChild(html);
-};
-};
+    static create() {
+        t = new Transaction();
+        t.append();
+        return t;
+    };
 
-transactions = [Transaction()];
+    append() {
+        document.getElementById("transactions-container").appendChild(html);
+    }
+}
+
+// transactions = [Transaction()];
 //Add and delete

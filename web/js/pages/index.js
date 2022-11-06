@@ -37,7 +37,10 @@ window.api.receive("transactionData", (event, data) => {
   document.getElementById("sign-in").classList.add("hidden");
   document.getElementById("info").classList.remove("hidden");
 
-  UserDataCache.transactions = JSON.parse(data)
+  let transactions = JSON.parse(data)
+  for (let element of transactions.Transactions) {
+    
+  }
 })
 
 function signIn() {
