@@ -15,8 +15,7 @@ class Transaction {
      * @returns a new Transaction instance with default values
      */
     static create(data) {
-        let t = new Transaction(data);
-        // t.append();
+        let t = new Transaction(data)
         return t;
     };
 

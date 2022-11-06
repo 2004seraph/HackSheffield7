@@ -14,8 +14,8 @@ class ProgramState {
     /**
      * List of type Transaction
      */
-    transactions = {}
-
+    transactions = []
+    
     /**
      * Map of type Tag
      */
