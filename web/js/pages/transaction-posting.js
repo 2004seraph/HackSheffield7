@@ -53,8 +53,9 @@ function createTransactionEntry(dateVal, tagVal, nameVal, amountVal, referenceVa
 }
 
 
-function postTransactions(allTransactions){
+function postTransactions(allUserData){
 
+    let allTransactions = allUserData.transactions
 
     if(allTransactions == undefined){
         console.log("NO TRANSACTIN DATA")
@@ -81,4 +82,32 @@ function postTransactions(allTransactions){
 
         createTransactionEntry(timeDate, tag, name, amount, reference)
     }
+
+    updateIncomeStatement(allUserData)
+}
+
+function updateIncomeStatement(allUserData){
+
+    console.log("USER DATA")
+    console.log(allUserData.basicConfig)
+
+    updateTitle(allUserData.basicConfig.businessName, allUserData.basicConfig.financialYearEnd);
+
+    updateRevenueSection(400, 0, 0, 0, 400);
+
+    updateCostOfSalesSection(300, 0, 100, 0, 200);
+
+    updateGrossProfit(6000);
+
+    updateOtherIncomesTotal(260);
+
+    updateExpensesTotal(500);
+
+    updateProfitLoss(3400);
+
+    AddEntryToIncomes("Rent Recieved", 260);
+
+    AddEntryToExpenses("Wages", 980);
+    AddEntryToExpenses("Marketing", 410);
+    AddEntryToExpenses("Rahman Gupta appointments", 9400);
 }
