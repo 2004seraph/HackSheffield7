@@ -182,23 +182,3 @@ function AddEntryToExpenses(name, value) {
 // }
 
 // FUNCTION CALLS TO UDPATE EVERYTHING
-
-updateTitle("Jakub Bala", "22/04/22");
-
-updateRevenueSection(400, 0, 0, 0, 400);
-
-updateCostOfSalesSection(300, 0, 100, 0, 200);
-
-updateGrossProfit(6000);
-
-updateOtherIncomesTotal(260);
-
-updateExpensesTotal(500);
-
-updateProfitLoss(3400);
-
-AddEntryToIncomes("Rent Recieved", 260);
-
-AddEntryToExpenses("Wages", 980);
-AddEntryToExpenses("Marketing", 410);
-AddEntryToExpenses("Rahman Gupta appointments", 9400);
