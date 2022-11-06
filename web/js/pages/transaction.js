@@ -1,27 +1,48 @@
 "use strict";
-
+console.log("asd");
 class Transaction {
     rawTransactionData = {};
 
     tag = null;
-
+    date = null;
+    name = null;
+    amount = 0;
+    reference = null;
     overridedAmount = false;
-
-    value = document.getElementById("tr-amount");
-    amount = this.value.value;
+    valueSign = "pos";
     if(amount > 0) {
-        value.style.color = "green";
+    valueSign = "pos";
 } else {
-    value.style.color = "red";
-    }
+    valueSign = "neg";
+}
+
+html = `<div class="transaction-div">\
+                <div class="date-and-tag">\
+                    <span class="tr-date">{date}</span><span class="tr-tag">{tag}</span>\
+                </div>\
+                <div class="name-and-amount">\
+                    <span class="tr-name">{name}</span><span class="tr-amount value-{valueSign}">£{amount}</span>\
+                </div>\
+                <div class="tr-reference">\
+                    {reference}\
+                </div>\
+            </div>`;
+
+
 
     /**
      * Transaction factory method
      * @returns a new Transaction instance with default values
      */
-    static create() {
-        return new Transaction();
-    }
-}
+    function create() {
+    t = new Transaction();
+    t.append();
+    return t;
+};
+    void append(){
+    document.getElementById("transactions-container").appendChild(html);
+};
+};
 
+transactions = [Transaction()];
 //Add and delete
