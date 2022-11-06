@@ -4,10 +4,6 @@ class Transaction {
     rawTransactionData = {};
 
     tag = null;
-    // date = null;
-    // name = null;
-    // amount = 0;
-    reference = null;
     overridedAmount = false;
     valueSign = "pos";
 
@@ -34,10 +30,6 @@ class Transaction {
         </div>`;
     }
 
-    
-
-
-
     /**
      * Transaction factory method
      * @returns a new Transaction instance with default values
@@ -52,6 +44,3 @@ class Transaction {
         document.getElementById("transactions-container").appendChild(html);
     }
 }
-
-// transactions = [Transaction()];
-//Add and delete
