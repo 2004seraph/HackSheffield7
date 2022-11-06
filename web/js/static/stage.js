@@ -11,7 +11,7 @@ class StagedConfig {
         this.endCallback = endCallback
 
         this.stages = Array.from(this.element.children)
-        console.log(this.stages)
+        // console.log(this.stages)
         this.stage = 0
 
         this.show()

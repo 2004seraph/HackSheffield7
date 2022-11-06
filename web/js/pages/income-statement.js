@@ -18,6 +18,11 @@ var netCostOfSales = document.getElementById("net-cost-of-sales")
 
 var grossProfit = document.getElementById("gross-profit")
 
+var netOtherIncomes = document.getElementById("net-other-incomes")
+var netExpenses = document.getElementById("net-expenses")
+
+var profitLoss = document.getElementById("profit-loss")
+
 
 // var cashSales = document.getElementById("cash-sales").parentElement.parentElement
 // cashSales.parentNode.removeChild(cashSales)
@@ -89,12 +94,48 @@ function updateGrossProfit(grossProfit){
     this.grossProfit.textContent = grossProfit
 }
 
+function updateOtherIncomesTotal(value){
+    netOtherIncomes.textContent = value
+}
+
+function updateExpensesTotal(value){
+    netExpenses.textContent = value
+}
+
+function updateProfitLoss(value){
+    profitLoss.textContent = value
+}
+
 function AddEntryToIncomes(name, value){
 
     let parentNode = tableElement
 
     let newRow = document.createElement("tr")
     let referenceNode = incomesEnd
+
+    console.log(referenceNode)
+    console.log(newRow)
+
+    let insertedRow = parentNode.insertBefore(newRow, referenceNode);
+
+    for(let i = 0; i < 3; i++){
+        let td = document.createElement("td")
+
+        if(i == 0){
+            td.textContent = name + ":"
+        }
+        if(i == 1){
+            td.textContent = value
+        }
+        insertedRow.appendChild(td)
+    }
+}
+
+function AddEntryToExpenses(name, value){
+    let parentNode = tableElement
+
+    let newRow = document.createElement("tr")
+    let referenceNode = expensesEnd
 
     console.log(referenceNode)
     console.log(newRow)
@@ -125,4 +166,14 @@ updateCostOfSalesSection(300, 0, 100, 0, 200)
 
 updateGrossProfit(6000)
 
+updateOtherIncomesTotal(260)
+
+updateExpensesTotal("who knows")
+
+updateProfitLoss("like 2 dorra")
+
 AddEntryToIncomes("Rent Recieved", 260)
+
+AddEntryToExpenses("Wages", 980)
+AddEntryToExpenses("Marketing", 410)
+AddEntryToExpenses("Rahman Gupta appointments", 9400)
