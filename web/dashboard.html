@@ -19,6 +19,7 @@
     <script src="js/lib/jquery-3.6.1.min.js"></script>
     <script src="js/static/tabset-notebook.js"></script>
     <script src="js/pages/transaction-posting.js"></script>
+    <script src="js/lib/chart.min.js"></script>
 </head>
 
 <body>
@@ -47,7 +48,7 @@
             </div>
             <div class="tabset-contents">
                 <div id="Dashboard" class="tabset-content">
-
+                    <canvas id="dashboard-canvas" width="100%" height="100%"></canvas>
                 </div>
 
                 <div id="Tags" class="tabset-content">
@@ -69,8 +70,8 @@
         </div>
     </div>
 
-    <script src="js/pages/dashboard.js"></script>
 
+    <script>canvas = document.getElementById("dashboard-canvas").getContext("2d");</script>
     <script>
         var transactions_page = 'transactions.html'
         var content_div = document.getElementById('Transactions');
@@ -112,6 +113,7 @@
     </script>
     <script src="js/pages/transaction-page.js"></script>
     <script src="js/pages/income-statement.js"></script>
+    <script src="js/pages/dashboard.js"></script>
 </body>
 
 </html>
