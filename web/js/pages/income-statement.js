@@ -34,17 +34,17 @@ function updateTitle(name, yearEnd) {
 }
 
 function updateRevenueSection(
-  creditSales,
-  cashSales,
-  salesReturns,
-  cashReturns,
-  netRevenue
+  creditSalesValue,
+  cashSalesValue,
+  salesReturnsValue,
+  cashReturnsValue,
+  netRevenueValue
 ) {
   //if any of the below are 0, they are deleted off of the IS, unless it is credit sales
-  creditSales.textContent = creditSales;
+  creditSales.textContent = creditSalesValue;
 
   if (cashSales != 0) {
-    cashSales.textContent = cashSales;
+    cashSales.textContent = cashSalesValue;
   } else {
     cashSales.parentElement.parentElement.parentNode.removeChild(
       cashSales.parentNode.parentNode
@@ -52,7 +52,7 @@ function updateRevenueSection(
   }
 
   if (salesReturns != 0) {
-    salesReturns.textContent = salesReturns;
+    salesReturns.textContent = salesReturnsValue;
   } else {
     salesReturns.parentElement.parentElement.parentNode.removeChild(
       salesReturns.parentNode.parentNode
@@ -60,55 +60,55 @@ function updateRevenueSection(
   }
 
   if (cashReturns != 0) {
-    cashReturns.textContent = cashReturns;
+    cashReturns.textContent = cashReturnsValue;
   } else {
     cashReturns.parentElement.parentElement.parentNode.removeChild(
       cashReturns.parentNode.parentNode
     );
   }
 
-  netRevenue.textContent = netRevenue;
+  netRevenue.textContent = netRevenueValue;
 }
 
 function updateCostOfSalesSection(
-  purchases,
-  openingInventory,
-  purchaseReturns,
-  closingInventory,
-  netCostOfSales
+  purchasesValue,
+  openingInventoryValue,
+  purchaseReturnsValue,
+  closingInventoryValue,
+  netCostOfSalesValue
 ) {
   //if any of the below are 0, they are deleted off of the IS, unless it is purchases
-  purchases.textContent = purchases;
+  purchases.textContent = purchasesValue;
 
   if (openingInventory != 0) {
-    openingInventory.textContent = openingInventory;
+    openingInventory.textContent = openingInventoryValue;
   } else {
     openingInventory.parentElement.parentElement.parentNode.removeChild(
       openingInventory.parentNode.parentNode
     );
   }
 
-  if (purchaseReturns != 0) {
-    purchaseReturns.textContent = purchaseReturns;
+  if (purchaseReturnsValue != 0) {
+    purchaseReturns.textContent = purchaseReturnsValue;
   } else {
     purchaseReturns.parentElement.parentElement.parentNode.removeChild(
       purchaseReturns.parentNode.parentNode
     );
   }
 
-  if (closingInventory != 0) {
-    closingInventory.textContent = closingInventory;
+  if (closingInventoryValue != 0) {
+    closingInventory.textContent = closingInventoryValue;
   } else {
     closingInventory.parentElement.parentElement.parentNode.removeChild(
       closingInventory.parentNode.parentNode
     );
   }
 
-  netCostOfSales.textContent = netCostOfSales;
+  netCostOfSales.textContent = netCostOfSalesValue;
 }
 
-function updateGrossProfit(grossProfit) {
-  grossProfit.textContent = grossProfit;
+function updateGrossProfit(grossProfitValue) {
+  grossProfit.textContent = grossProfitValue;
 }
 
 function updateOtherIncomesTotal(value) {
@@ -193,9 +193,9 @@ updateGrossProfit(6000);
 
 updateOtherIncomesTotal(260);
 
-updateExpensesTotal("who knows");
+updateExpensesTotal(500);
 
-updateProfitLoss("like 2 dorra");
+updateProfitLoss(3400);
 
 AddEntryToIncomes("Rent Recieved", 260);
 
