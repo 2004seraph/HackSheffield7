@@ -7,8 +7,8 @@ const authJWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE2NjI0MjI0MDAsIm
 switch (args[0]) {
     case 'createAccounts':
         console.log(JSON.stringify({"quantity": args[1], "numTransactions": args[2], "state": "open"}))
-        
-        var req = unirest('POST', 'https://api-gateway-public.clouddqt.uk.capitalone.com/developer-services-platform-pp/api/data/accounts/create')
+
+        var req = unirest('POST', 'https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/accounts/create')
         .headers({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + authJWT,
@@ -16,11 +16,11 @@ switch (args[0]) {
         })
         .send(JSON.stringify({"quantity": args[1], "numTransactions": args[2], "state": "open"}))
         .end(function (res) {
-            if (res.error) throw new Error(res.error);
-            console.log(res.raw_body);
-        });
+            if (res.error) throw new Error(res.error)
+            console.log(res.raw_body)
+        })
 
-        break;
+        break
     case 'listAccounts':
         var req = unirest('GET', 'https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/accounts')
         .headers({
@@ -33,9 +33,22 @@ switch (args[0]) {
             console.log(res.raw_body)
         })
         break
+    case "padTransactions":
+        var req = unirest('POST', 'https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/' + args[1] + '/create')
+        .headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + authJWT,
+            'version': '1.0'
+        })
+        .send(JSON.stringify({"quantity": args[2]}))
+        .end(function (res) {
+            if (res.error) throw new Error(res.error);
+            console.log(res.raw_body)
+        })
+        break
 }
 
 
 setTimeout(function() {
     console.log('time out')
-}, 5000);
+}, 2000)
