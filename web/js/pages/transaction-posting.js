@@ -93,11 +93,11 @@ function updateIncomeStatement(allUserData){
 
     updateTitle(allUserData.basicConfig.businessName, allUserData.basicConfig.financialYearEnd);
 
-    updateRevenueSection(400, 0, (150), 0, 250);
+    updateRevenueSection(4000, 0, (150), 0, 3850);
 
-    updateCostOfSalesSection(300, 0, 100, 0, 200);
+    updateCostOfSalesSection(2000, 0, 200, 0, 1800);
 
-    updateGrossProfit(6000);
+    updateGrossProfit(2050);
 
     updateOtherIncomesTotal(260);
 
@@ -109,5 +109,4 @@ function updateIncomeStatement(allUserData){
 
     AddEntryToExpenses("Wages", 980);
     AddEntryToExpenses("Marketing", 410);
-    AddEntryToExpenses("Rahman Gupta appointments", 9400);
 }
