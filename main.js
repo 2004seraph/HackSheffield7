@@ -73,6 +73,36 @@ const createWindow = () => {
     show: false,
   });
 
+    ipcMain.on('saveUserData', (event, data) => {
+        saveUserData(data)
+        console.log("User data saved")
+    })
+    ipcMain.handle("getUserData", async (event, data) => {
+        return GlobalUserData
+    })
+    ipcMain.on("getUserPurchases", (event, data) => {
+        console.log(data)
+        let req = unirest.get('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/' + data.id + '/transactions')
+        .headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ${authJWT}',
+            'version': '1.0'
+        })
+        .query("status", "eq:Successful")
+        .end((response) => {
+            console.log(response.raw_body)
+            win.webContents.send('transactionData', response.raw_body)
+        })
+    })
+  ipcMain.on("saveUserData", (event, data) => {
+    saveUserData(data);
+    console.log("User data saved");
+  });
+  ipcMain.handle("getUserData", async (event, data) => {
+    return GlobalUserData;
+  });
+<<<<<<< Updated upstream
+=======
   ipcMain.on("saveUserData", (event, data) => {
     saveUserData(data);
     console.log("User data saved");
@@ -99,12 +129,13 @@ const createWindow = () => {
         win.webContents.send("transactionData", response.raw_body);
       });
   });
+>>>>>>> Stashed changes
 
   win.once("ready-to-show", () => {
     win.show();
   });
 
-  win.loadFile("web/index.html");
+  win.loadFile("web/intro.html");
 };
 
 const createWindow = () => {
@@ -143,6 +174,35 @@ const createWindow = () => {
   ipcMain.handle("getUserData", async (event, data) => {
     return GlobalUserData;
   });
+<<<<<<< Updated upstream
+=======
+  ipcMain.on("saveUserData", (event, data) => {
+    saveUserData(data);
+    console.log("User data saved");
+  });
+  ipcMain.handle("getUserData", async (event, data) => {
+    return GlobalUserData;
+  });
+  ipcMain.on("getUserPurchases", (event, data) => {
+    console.log(data);
+    let req = unirest
+      .get(
+        "https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/" +
+          data.id +
+          "/transactions"
+      )
+      .headers({
+        "Content-Type": "application/json",
+        Authorization: "Bearer ${authJWT}",
+        version: "1.0",
+      })
+      .query("status", "eq:Successful")
+      .end((response) => {
+        console.log(response.raw_body);
+        win.webContents.send("transactionData", response.raw_body);
+      });
+  });
+>>>>>>> Stashed changes
 
   win.once("ready-to-show", () => {
     win.show();
