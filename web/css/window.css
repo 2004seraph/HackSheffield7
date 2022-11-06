@@ -11,9 +11,9 @@ html, body {
     background-size: 250px;
     
 
-    color:rgb(148, 37, 148);
+    color:rgb(0, 0, 0);
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Consolas, Geneva, Verdana, sans-serif
 }
 
 #window-titlebar {
