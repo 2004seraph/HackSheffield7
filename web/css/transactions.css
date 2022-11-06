@@ -10,7 +10,6 @@
 }
 
 #transactions-container{
-    width:100%;
     height:100%;
     margin:0;
     padding:0;
@@ -18,43 +17,58 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    min-width: 500px;
+    max-width: 50%;
 }
 
 .transaction-div{
     background-color:blueviolet;
     margin:4px;
+    padding: 5px;
 
-    min-width: fit-content;
-    width:50%;
-    max-width: 600px;
+    width:100%;
 
     height:fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+
+    border-radius: 10px;
+
 }
 
 .transaction-div > .date-and-tag{
-    width: 100%;
     display: flex;
-    background-color: red;
 
     justify-content: space-between;
 }
 
 .transaction-div > .date-and-tag > .tr-date{
     padding-left:8px;
+    color:black;
+    font-style: italic;
+    font-size: 14px;
+
+    align-self:flex-start;
 }
 .transaction-div > .date-and-tag > .tr-tag{
     padding-right:8px;
+    color:black;
+    font-weight: bold;
+    font-size: 18px;
+
+    align-self:flex-start;
 }
 
 .transaction-div > .name-and-amount{
     display: flex;
     justify-content: center;
-    background-color: orange;
 
     justify-content: space-between;
+
+    border-bottom: solid 1px black;
 }
 
 .transaction-div > .name-and-amount> .tr-name{
@@ -62,12 +76,15 @@
 }
 .transaction-div > .name-and-amount > .tr-amount{
     padding-right:8px;
+    font-weight: bold;
 }
 
 
 .transaction-div > .tr-reference{
     display: flex;
     justify-content: flex-start;
-    background-color: yellow;
+    margin-top:5px;
+    font-size:14px;
+    font-style:italic;
     padding-left: 8px;
 }
