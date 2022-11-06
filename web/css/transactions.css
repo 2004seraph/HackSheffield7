@@ -35,20 +35,39 @@
 }
 
 .transaction-div > .date-and-tag{
+    width: 100%;
     display: flex;
-    justify-content: center;
     background-color: red;
+
+    justify-content: space-between;
+}
+
+.transaction-div > .date-and-tag > .tr-date{
+    padding-left:8px;
+}
+.transaction-div > .date-and-tag > .tr-tag{
+    padding-right:8px;
 }
 
 .transaction-div > .name-and-amount{
     display: flex;
     justify-content: center;
     background-color: orange;
+
+    justify-content: space-between;
+}
+
+.transaction-div > .name-and-amount> .tr-name{
+    padding-left:8px;
+}
+.transaction-div > .name-and-amount > .tr-amount{
+    padding-right:8px;
 }
 
 
-.transaction-div > .reference{
+.transaction-div > .tr-reference{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: yellow;
+    padding-left: 8px;
 }
