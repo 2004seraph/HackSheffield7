@@ -32,27 +32,75 @@ function gotoDashboard() {
     document.getElementById("dashboard-redirect").click()
 }
 
+window.api.receive("transactionData", (event, data) => {
+    console.log(data)
+})
+
 function signIn() {
     console.log("sign in")
 
-    const headers = new Headers()
-    headers.append("Content-Type", "application/json")
-    headers.append("Authorization", "Bearer " + AUTHJWT)
-    headers.append("version", "1.0")
+    document.getElementById("loading-indicator").classList.remove("hidden")
 
-    const myInit = {
-        method: 'GET',
-        headers: headers
-    }
+    window.api.send('getUserPurchases', {id: document.getElementById("accountID").value})
+    //     console.log(data)
+    // })
 
-    const myRequest = new Request('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/accounts/' + document.getElementById("accountID").value)
+    // const headers = new Headers()
+    // headers.append("Content-Type", "application/json")
+    // headers.append("Authorization", "Bearer " + AUTHJWT)
+    // headers.append("version", "1.0")
 
-    fetch(myRequest, myInit)
-    .then((response) => {
-        console.log(response)
-    });
+    // const myInit = {
+    //     method: 'GET',
+    //     headers: headers
+    // }
 
-    next()
+    // const myRequest = new Request('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/' + document.getElementById("accountID").value + "/transactions")
+    // let status
+    // fetch(myRequest, myInit)
+    //     .then((response) => {
+    //         console.log("response")
+    //         console.log(response)
+    //         console.log(response.body)
+
+    //         status = response.status
+            
+    //         const reader = response.body.getReader();
+    //         let x = new ReadableStream({
+    //             start(controller) {
+    //                 return pump();
+    //                 function pump() {
+    //                 return reader.read().then(({ done, value }) => {
+    //                     // When no more data needs to be consumed, close the stream
+    //                     if (done) {
+    //                     controller.close();
+    //                     return;
+    //                     }
+    //                     // Enqueue the next data chunk into our target stream
+    //                     controller.enqueue(value);
+    //                     return pump();
+    //                 });
+    //                 }
+    //             }
+    //         })
+    //     })
+    //     .then((stream) => new Response(stream))
+    //     .then((response) => {
+    //         response.blob().then((result) => {
+    //             console.log(result)
+
+    //             if (status == 200) {
+    //                 const fr = new FileReader()
+
+    //                 fr.onload = (e) => {
+    //                     console.log(JSON.parse(e.target.result))
+    //                 }
+
+    //                 fr.readAsText(result)
+    //                 next()
+    //             }
+    //         })
+    //     })
 }
 
 function next() {
