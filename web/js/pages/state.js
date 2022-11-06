@@ -9,6 +9,8 @@ class ProgramState {
         financialYearEnd: ""
     }
 
+    accountData = {}
+
     /**
      * List of type Transaction
      */

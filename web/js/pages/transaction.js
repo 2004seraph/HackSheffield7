@@ -17,17 +17,17 @@ class Transaction {
         }
 
         this.html = `
-        <div class="transaction-div">
-            <div class="date-and-tag">
-                <span class="tr-date">` + data.timestamp + `</span><span class="tr-tag">` + this.tag + `</span>
-            </div>
-            <div class="name-and-amount">
-                <span class="tr-name">` + data.message + `</span><span class="tr-amount value-` + this.valueSign + `">£` + data.amount + `</span>
-            </div>
-            <div class="tr-reference">
-                ` + data.message + `
-            </div>
-        </div>`;
+            <div class="transaction-div">
+                <div class="date-and-tag">
+                    <span class="tr-date">` + data.timestamp + `</span><span class="tr-tag">` + this.tag + `</span>
+                </div>
+                <div class="name-and-amount">
+                    <span class="tr-name">` + data.message + `</span><span class="tr-amount value-` + this.valueSign + `">£` + data.amount + `</span>
+                </div>
+                <div class="tr-reference">
+                    ` + data.message + `
+                </div>
+            </div>`;
     }
 
     /**
@@ -40,7 +40,7 @@ class Transaction {
         return t;
     };
 
-    append() {
+    append(element) {
         document.getElementById("transactions-container").appendChild(html);
     }
 }
