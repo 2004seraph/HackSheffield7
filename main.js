@@ -77,6 +77,7 @@ const createWindow = () => {
 
   ipcMain.on("saveUserData", (event, data) => {
     saveUserData(data);
+    win.webContents.send("dataSaved", {});
     console.log("User data saved");
   });
   ipcMain.handle("getUserData", async (event, data) => {
