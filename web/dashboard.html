@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="css/tabset-notebook.css">
+    <link rel="stylesheet" href="./css/tabset-notebook.css">
     <link rel="stylesheet" href="./css/transactions.css">
     <link rel="stylesheet" href="./css/income-report.css">
     <link rel="stylesheet" href="./css/tag.css">
     <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
-
-    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
 
     <script src="js/lib/jquery-3.6.1.min.js"></script>
+
     <script src="js/static/tabset-notebook.js"></script>
+    <script src="js/pages/transaction.js"></script>
     <script src="js/pages/transaction-posting.js"></script>
+    <script src="js/pages/tag.js"></script>
     <script src="js/lib/chart.min.js"></script>
 </head>
 
@@ -56,7 +58,22 @@
                         <div id="tag-list">
                         </div>
                         <div id="create-tag">
-                            <input type="text" placeholder="name" maxlength="30">
+                            <h2>Create a custom tag</h2>
+                            <input id="create-tag-name" type="text" placeholder="Name" maxlength="30">
+                            <input id="create-tag-desc" type="text" placeholder="Description" maxlength="50">
+                            <input id="create-tag-excl" type="checkbox">
+
+                            <label for="create-tag-type">Type</label>
+                            <select id="create-tag-type" name="create-tag-type">
+                                <option value="Expense">Expense</option>
+                                <option value="Purchases">Purchases</option>
+                                <option value="Sales">Sales</option>
+                                <option value="OtherIncome">Other Income</option>
+                                <option value="SalesReturns">Sales Returns</option>
+                                <option value="PurchaseReturns">Purchase Returns</option>
+                            </select>
+
+                            <button onclick="createTag()">Create</button>
                         </div>
                     </div>
                 </div>
@@ -70,8 +87,8 @@
         </div>
     </div>
 
-
     <script>canvas = document.getElementById("dashboard-canvas").getContext("2d");</script>
+
     <script>
         var transactions_page = 'transactions.html'
         var content_div = document.getElementById('Transactions');
@@ -91,8 +108,6 @@
 
             // xmlHttp.send(null)
     </script>
-    <script src="js/pages/transaction.js"></script>
-
     <script>
         var statement_page = 'income-report.html'
         var content_div = document.getElementById('income-report-document');
@@ -113,6 +128,8 @@
     </script>
     <script src="js/pages/transaction-page.js"></script>
     <script src="js/pages/income-statement.js"></script>
+    <script src="js/pages/tag-page.js"></script>
+
     <script src="js/pages/dashboard.js"></script>
 </body>
 

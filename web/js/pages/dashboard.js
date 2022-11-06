@@ -7,8 +7,8 @@ let pieChart = null;
 
 window.api.sendInvoke("getUserData", null).then((data) => {
   GlobalUserData = data;
-  console.log(GlobalUserData);
 
+  loadAllTransactions(GlobalUserData);
   //program state
 
   //invoke chart functions

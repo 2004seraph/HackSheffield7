@@ -5,6 +5,7 @@
 #tag-pane {
     width: 100%;
     height: 100%;
+    max-height: 100%;
     display: flex;
 }
 
@@ -20,4 +21,11 @@
     flex-direction: column;
     
     background-color: rgb(25, 0, 116);
+    
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.tag-div {
+    background-color: aquamarine;
 }
