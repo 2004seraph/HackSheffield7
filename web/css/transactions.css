@@ -23,16 +23,17 @@
 }
 
 .transaction-div{
-    background-color:blueviolet;
+    background-color:rgba(0, 47, 255, 0.568);
     margin:4px;
     padding: 5px;
-
+    border: 2px solid black;
     width:100%;
 
     height:fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    color: white;
 
 
     border-radius: 10px;
@@ -87,4 +88,11 @@
     font-size:14px;
     font-style:italic;
     padding-left: 8px;
+}
+
+.value-neg{
+    color:red;
+}
+.value-pos{
+    color: rgb(0, 255, 0);
 }
