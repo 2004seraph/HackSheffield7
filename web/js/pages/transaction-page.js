@@ -1,4 +1,8 @@
 "use strict"
 
+function loadAllTransactions(allUserData){
 
-postTransactions();
+    let allUserTransactions = allUserData.transactions
+
+    postTransactions(allUserTransactions);
+}

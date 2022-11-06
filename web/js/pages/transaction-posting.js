@@ -53,7 +53,13 @@ function createTransactionEntry(dateVal, tagVal, nameVal, amountVal, referenceVa
 }
 
 
-function postTransactions(){
+function postTransactions(allTransactions){
+
+    console.log(allTransactions)
+
+    for(let tr in allTransactions){
+        
+    }
 
     createTransactionEntry("02/01/1999", "Expense", "Jeremy Nuts", -899.99, "Thanks for the crack kind stranger")
 }
