@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
 
-        <link rel="stylesheet" href="css/tabset-notebook.css">
-        <link rel="stylesheet" href="./css/transactions.css">
-        <link rel="stylesheet" href="./css/income-report.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
 
-        <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tabset-notebook.css">
+    <link rel="stylesheet" href="./css/transactions.css">
+    <link rel="stylesheet" href="./css/income-report.css">
 
-        <script src="js/lib/jquery-3.6.1.min.js"></script>
-        <script src="js/static/tabset-notebook.js"></script>
-        <script src="js/pages/transaction-posting.js"></script>
-    </head>
-    <body>
-        <div id="window-titlebar">
-            <h1>SoleStats</h1>
-        </div>
+    <link rel="stylesheet" href="css/dashboard.css" />
 
-        <div id="window-content">
-            <div class="tabset-notebook" id="main-notebook">
-                <div class="tabset-header">
-                    <div class="tabset-links">
-                        <button class="tabset-link tabset-link-default" name="Dashboard"> <img src="assets/buttonDash.svg" height="auto" width="auto"/> </button>
-                        <button class="tabset-link" name="Tags"><img src="assets/buttonTags.svg" height="auto" width="auto" /></button>
-                        <button class="tabset-link" name="Transactions"><img src="assets/buttonTransactions.svg" height="auto" width="auto" /></button>
-                        <button class="tabset-link" name="Reports"><img src="assets/buttonStatement.svg" height="auto" width="auto" /></button>
-                    </div>
-                </div>
-                <div class="tabset-contents">
-                    <div id="Dashboard" class="tabset-content">
-                        1
-                    </div>
-                    
-                    <div id="Tags" class="tabset-content">
-                        2
-                    </div>
-                    
-                    <div id="Transactions" class="tabset-content">
-                        3
-                    </div>
-                    
-                    <div id="Reports" class="tabset-content">
-                        
-                    </div>
+    <script src="js/lib/jquery-3.6.1.min.js"></script>
+    <script src="js/static/tabset-notebook.js"></script>
+    <script src="js/pages/transaction-posting.js"></script>
+</head>
+
+<body>
+    <div id="window-titlebar">
+        <img id="window-titlebar-logo" src="assets/logo.svg" width="auto" height="auto" alt="Logo" />
+        <h1>Sole Accounts Manager</h1>
+    </div>
+
+    <div id="window-content">
+        <div class="tabset-notebook" id="main-notebook">
+            <div class="tabset-header">
+                <div class="tabset-links">
+                    <button class="tabset-link tabset-link-default" name="Dashboard">
+                        <img src="assets/buttonDash.svg" height="auto" width="auto" alt="Dashboard" />
+                    </button>
+                    <button class="tabset-link" name="Tags">
+                        <img src="assets/buttonTags.svg" height="auto" width="auto" alt="Tags" />
+                    </button>
+                    <button class="tabset-link" name="Transactions">
+                        <img src="assets/buttonTransactions.svg" height="auto" width="auto" alt="Transactions" />
+                    </button>
+                    <button class="tabset-link" name="Reports">
+                        <img src="assets/buttonStatement.svg" height="auto" width="auto" alt="Reports" />
+                    </button>
                 </div>
             </div>
+            <div class="tabset-contents">
+                <div id="Dashboard" class="tabset-content">1</div>
+
+                <div id="Tags" class="tabset-content">2</div>
+
+                <div id="Transactions" class="tabset-content">3</div>
+
+                <div id="Reports" class="tabset-content"></div>
+            </div>
         </div>
+    </div>
 
-        <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/dashboard.js"></script>
 
-        <script>
-            var transactions_page   = 'transactions.html'
-            var content_div = document.getElementById('Transactions');
+    <script>
+        var transactions_page = 'transactions.html'
+        var content_div = document.getElementById('Transactions');
 
-            var xmlHttp = new XMLHttpRequest();
+        var xmlHttp = new XMLHttpRequest();
 
-            xmlHttp.onreadystatechange = function() {
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                {
-                    content_div.innerHTML = xmlHttp.responseText
-                } else {
-                    this.open("GET", transactions_page, false)
-                    this.send(null)
-                }
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                content_div.innerHTML = xmlHttp.responseText
+            } else {
+                this.open("GET", transactions_page, false)
+                this.send(null)
             }
+        }
 
-            xmlHttp.open("GET", transactions_page, false)
+        xmlHttp.open("GET", transactions_page, false)
             // xmlHttp.send(null)
-        </script>
+    </script>
 
-        <script>
-            var statement_page   = 'income-report.html'
-            var content_div = document.getElementById('Reports');
+    <script>
+        var statement_page = 'income-report.html'
+        var content_div = document.getElementById('Reports');
 
-            var xmlHttp = new XMLHttpRequest();
+        var xmlHttp = new XMLHttpRequest();
 
-            xmlHttp.onreadystatechange = function() {
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                {
-                    content_div.innerHTML = xmlHttp.responseText
-                } else {
-                    this.open("GET", statement_page, false)
-                    this.send(null)
-                }
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                content_div.innerHTML = xmlHttp.responseText;
+            } else {
+                this.open("GET", statement_page, false);
+                this.send(null);
             }
+        };
 
-            xmlHttp.open("GET", statement_page, false)
+        xmlHttp.open("GET", statement_page, false)
             // xmlHttp.send(null)
-        </script>
-        <script src="js/pages/transaction-page.js"></script>
-        <script src="js/pages/income-statement.js"></script>
-    </body>
+    </script>
+    <script src="js/pages/transaction-page.js"></script>
+    <script src="js/pages/income-statement.js"></script>
+</body>
+
 </html>

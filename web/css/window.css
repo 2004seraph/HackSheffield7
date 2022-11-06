@@ -6,7 +6,10 @@ html, body {
     margin: 0;
 
     background: rgb(75, 75, 75);
-    background: linear-gradient(0deg, rgb(0, 240, 240) 0%, rgb(0, 255, 191) 100%);
+    background: rgb(0, 255, 191);
+    background: linear-gradient(0deg, rgb(0, 240, 240) 0%, rgb(0, 255, 191) 100%),url("../assets/background.svg");
+    background-size: 250px;
+    
 
     color:rgb(148, 37, 148);
 
@@ -16,7 +19,11 @@ html, body {
 #window-titlebar {
     app-region: drag;
     -webkit-app-region: drag;
-
+    
+    display: flex;
+    justify-self: left;
+    align-items: left;
+    flex:1;
     width: 100%;
     height: calc(env(titlebar-area-height) + 1px);
 
@@ -29,6 +36,13 @@ html, body {
     color: white;
 }
 
+#window-titlebar-logo{
+    align-self:left;
+    margin: 0%;
+    height:calc(env(titlebar-area-height) - 3px);
+    flex:0.25;
+}
+
 #window-titlebar > * {
     margin: 0;
     padding: 0;
@@ -36,7 +50,13 @@ html, body {
 }
 
 #window-titlebar > h1 {
+    position: relative;
+    align-self: center;
+    flex-direction: column;
+    display: flex;
     font-size: 100%;
+    flex: 10;
+    text-align: center;
 }
 
 #window-content {
