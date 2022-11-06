@@ -1,0 +1,90 @@
+#content-transactions-page{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+}
+
+#transactions-container{
+    height:100%;
+    margin:0;
+    padding:0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 500px;
+    max-width: 50%;
+}
+
+.transaction-div{
+    background-color:blueviolet;
+    margin:4px;
+    padding: 5px;
+
+    width:100%;
+
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+    border-radius: 10px;
+
+}
+
+.transaction-div > .date-and-tag{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.transaction-div > .date-and-tag > .tr-date{
+    padding-left:8px;
+    color:black;
+    font-style: italic;
+    font-size: 14px;
+
+    align-self:flex-start;
+}
+.transaction-div > .date-and-tag > .tr-tag{
+    padding-right:8px;
+    color:black;
+    font-weight: bold;
+    font-size: 18px;
+
+    align-self:flex-start;
+}
+
+.transaction-div > .name-and-amount{
+    display: flex;
+    justify-content: center;
+
+    justify-content: space-between;
+
+    border-bottom: solid 1px black;
+}
+
+.transaction-div > .name-and-amount> .tr-name{
+    padding-left:8px;
+}
+.transaction-div > .name-and-amount > .tr-amount{
+    padding-right:8px;
+    font-weight: bold;
+}
+
+
+.transaction-div > .tr-reference{
+    display: flex;
+    justify-content: flex-start;
+    margin-top:5px;
+    font-size:14px;
+    font-style:italic;
+    padding-left: 8px;
+}

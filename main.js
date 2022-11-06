@@ -80,6 +80,69 @@ const createWindow = () => {
   ipcMain.handle("getUserData", async (event, data) => {
     return GlobalUserData;
   });
+  ipcMain.on("getUserPurchases", (event, data) => {
+    console.log(data);
+    let req = unirest
+      .get(
+        "https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/" +
+          data.id +
+          "/transactions"
+      )
+      .headers({
+        "Content-Type": "application/json",
+        Authorization: "Bearer ${authJWT}",
+        version: "1.0",
+      })
+      .query("status", "eq:Successful")
+      .end((response) => {
+        console.log(response.raw_body);
+        win.webContents.send("transactionData", response.raw_body);
+      });
+  });
+
+  win.once("ready-to-show", () => {
+    win.show();
+  });
+
+  win.loadFile("web/index.html");
+};
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    minWidth: 600,
+    minHeight: 500,
+
+    titleBarStyle: "hidden",
+    titleBarOverlay: {
+      color: "#989898",
+      symbolColor: "#00",
+      height: 30,
+    },
+
+    autoHideMenuBar: true,
+
+    webPreferences: {
+      enableBlinkFeatures: false,
+      contextIsolation: true,
+      backgroundThrottling: false,
+
+      preload: path.join(__dirname, "preload.js"),
+
+      devTools: NODE_ENV == "development" ? true : false,
+    },
+
+    show: false,
+  });
+
+  ipcMain.on("saveUserData", (event, data) => {
+    saveUserData(data);
+    console.log("User data saved");
+  });
+  ipcMain.handle("getUserData", async (event, data) => {
+    return GlobalUserData;
+  });
 
   win.once("ready-to-show", () => {
     win.show();
