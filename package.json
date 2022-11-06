@@ -11,7 +11,8 @@
     "build": "npx electron-builder build --win portable",
     "createAccounts": "node scripts.js createAccounts 2 25",
     "listAccounts": "node scripts.js listAccounts",
-    "padTransactions": "node scripts.js padTransactions 25405838 25"
+    "padTransactions": "node scripts.js padTransactions 25405838 25",
+    "getTransactions": "node scripts.js getTransactions 25405838"
   },
   "homepage": "https://github.com/Sammot/HackSheffield7#readme",
   "repository": {

@@ -42,8 +42,23 @@ switch (args[0]) {
         })
         .send(JSON.stringify({"quantity": args[2]}))
         .end(function (res) {
-            if (res.error) throw new Error(res.error);
+            if (res.error) throw new Error(res.error)
             console.log(res.raw_body)
+        })
+        break
+    case "getTransactions":
+        var req = unirest('GET', 'https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/' + args[1] + '/transactions')
+        .headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + authJWT,
+            'version': '1.0'
+        })
+        // .query("status", "eq:Successful")
+        // .query("amount", "gte:12.34")
+        // .query("amount", "lt:43.21")
+        .end(function (res) {
+            if (res.error) throw new Error(res.error);
+            console.log(res.raw_body);
         })
         break
 }

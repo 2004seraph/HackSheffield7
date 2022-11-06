@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld('api', {
       return ipcRenderer.invoke(channel, data)
     },
     receive: (channel, func) => {
-      ipcRenderer.on(channel, (event, ...args) => func(...args))
+      ipcRenderer.on(channel, (event, message) => func(event, message))
     },
   }
 )

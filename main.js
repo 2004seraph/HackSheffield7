@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const log = require("electron-log");
 const { app, BrowserWindow, ipcMain } = require("electron");
-const { exit } = require("process");
+const AWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE2NjI0MjI0MDAsImFwaV9zdWIiOiIzNzU5NzA2ZjQxMGMyMTdjODYyMTZhOGZhZGIzMDY1NDc0YmRmZjNkNDdiNDg5ZGM1OTk1NzQyYTE0ZTY5ZDQxMTY3NTEyMzIwMDAwMCIsInBsYyI6IjVkY2VjNzRhZTk3NzAxMGUwM2FkNjQ5NSIsImV4cCI6MTY3NTEyMzIwMCwiZGV2ZWxvcGVyX2lkIjoiMzc1OTcwNmY0MTBjMjE3Yzg2MjE2YThmYWRiMzA2NTQ3NGJkZmYzZDQ3YjQ4OWRjNTk5NTc0MmExNGU2OWQ0MSJ9.Mijhmrl5GOeD6qrSpj4NHZlT3hx6DT8WE-OqP-5kwcS7EIA_DScaaRVpqCflKJraLbFaNXz7DJR6lliN9VrQJvnu-4aLQonFfazLk8Nf8Fujd2C81Z-BenNSTY1PApFS18WVHaS2VNolC_UufXNfCigBDkr5emEB1Q52gLdQBPdGb_YMO04g0ln5YNIe0YARzDniT37NjF6rux6iguUbajGF35hVJkzIfpvMPz-FCXcehBsocPAhUyhakeBS-0cjeCcTTRMAgB_O3zKPSQ6QyOtVjQsqxIS6rRThTk1hu9pbRvR4amoe73ZYt_yjFYQM68IYdpRldZi9kjnGhdrUKQ"
 
 const NODE_ENV = "development";
 
@@ -46,9 +46,9 @@ function saveUserData(data) {
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
+    width: 1000,
     height: 600,
-    minWidth: 600,
+    minWidth: 1000,
     minHeight: 500,
 
     titleBarStyle: "hidden",
@@ -90,37 +90,17 @@ const createWindow = () => {
       )
       .headers({
         "Content-Type": "application/json",
-        Authorization: "Bearer ${authJWT}",
-        version: "1.0",
+        "Authorization": "Bearer " + AWT,
+        "version": "1.0",
       })
-      .query("status", "eq:Successful")
+    //   .query("status", "eq:Successful")
       .end((response) => {
-        console.log(response.raw_body);
         win.webContents.send("transactionData", response.raw_body);
       });
   });
   ipcMain.on("saveUserData", (event, data) => {
     saveUserData(data);
     console.log("User data saved");
-  });
-  ipcMain.on("getUserPurchases", (event, data) => {
-    console.log(data);
-    let req = unirest
-      .get(
-        "https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/" +
-          data.id +
-          "/transactions"
-      )
-      .headers({
-        "Content-Type": "application/json",
-        Authorization: "Bearer ${authJWT}",
-        version: "1.0",
-      })
-      .query("status", "eq:Successful")
-      .end((response) => {
-        console.log(response.raw_body);
-        win.webContents.send("transactionData", response.raw_body);
-      });
   });
 
   win.once("ready-to-show", () => {

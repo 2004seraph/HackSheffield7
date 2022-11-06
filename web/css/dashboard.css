@@ -1,1 +1,8 @@
 @import url("window.css");
+
+#income-report-document {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    padding: 10px;
+}

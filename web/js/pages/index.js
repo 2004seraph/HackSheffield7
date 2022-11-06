@@ -32,9 +32,17 @@ function gotoDashboard() {
   document.getElementById("dashboard-redirect").click();
 }
 
+//Only show the next UI when the data is recieved
 window.api.receive("transactionData", (event, data) => {
-  console.log(data);
-});
+  document.getElementById("sign-in").classList.add("hidden");
+  document.getElementById("info").classList.remove("hidden");
+
+  let transactions = JSON.parse(data)
+  console.log(transactions)
+  for (let element of transactions.Transactions) {
+    UserDataCache.transactions.push(Transaction.create(element))
+  }
+})
 
 function signIn() {
   console.log("sign in");
@@ -44,68 +52,6 @@ function signIn() {
   window.api.send("getUserPurchases", {
     id: document.getElementById("accountID").value,
   });
-  document.getElementById("sign-in").classList.add("hidden");
-  document.getElementById("info").classList.remove("hidden");
-
-  //     console.log(data)
-  // })
-
-  // const headers = new Headers()
-  // headers.append("Content-Type", "application/json")
-  // headers.append("Authorization", "Bearer " + AUTHJWT)
-  // headers.append("version", "1.0")
-
-  // const myInit = {
-  //     method: 'GET',
-  //     headers: headers
-  // }
-
-  // const myRequest = new Request('https://sandbox.capitalone.co.uk/developer-services-platform-pr/api/data/transactions/accounts/' + document.getElementById("accountID").value + "/transactions")
-  // let status
-  // fetch(myRequest, myInit)
-  //     .then((response) => {
-  //         console.log("response")
-  //         console.log(response)
-  //         console.log(response.body)
-
-  //         status = response.status
-
-  //         const reader = response.body.getReader();
-  //         let x = new ReadableStream({
-  //             start(controller) {
-  //                 return pump();
-  //                 function pump() {
-  //                 return reader.read().then(({ done, value }) => {
-  //                     // When no more data needs to be consumed, close the stream
-  //                     if (done) {
-  //                     controller.close();
-  //                     return;
-  //                     }
-  //                     // Enqueue the next data chunk into our target stream
-  //                     controller.enqueue(value);
-  //                     return pump();
-  //                 });
-  //                 }
-  //             }
-  //         })
-  //     })
-  //     .then((stream) => new Response(stream))
-  //     .then((response) => {
-  //         response.blob().then((result) => {
-  //             console.log(result)
-
-  //             if (status == 200) {
-  //                 const fr = new FileReader()
-
-  //                 fr.onload = (e) => {
-  //                     console.log(JSON.parse(e.target.result))
-  //                 }
-
-  //                 fr.readAsText(result)
-  //                 next()
-  //             }
-  //         })
-  //     })
 }
 
 function next() {

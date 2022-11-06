@@ -41,33 +41,33 @@ function updateRevenueSection(
   netRevenue
 ) {
   //if any of the below are 0, they are deleted off of the IS, unless it is credit sales
-  this.creditSales.textContent = creditSales;
+  creditSales.textContent = creditSales;
 
   if (cashSales != 0) {
-    this.cashSales.textContent = cashSales;
+    cashSales.textContent = cashSales;
   } else {
-    this.cashSales.parentElement.parentElement.parentNode.removeChild(
-      this.cashSales.parentNode.parentNode
+    cashSales.parentElement.parentElement.parentNode.removeChild(
+      cashSales.parentNode.parentNode
     );
   }
 
   if (salesReturns != 0) {
-    this.salesReturns.textContent = salesReturns;
+    salesReturns.textContent = salesReturns;
   } else {
-    this.salesReturns.parentElement.parentElement.parentNode.removeChild(
-      this.salesReturns.parentNode.parentNode
+    salesReturns.parentElement.parentElement.parentNode.removeChild(
+      salesReturns.parentNode.parentNode
     );
   }
 
   if (cashReturns != 0) {
-    this.cashReturns.textContent = cashReturns;
+    cashReturns.textContent = cashReturns;
   } else {
-    this.cashReturns.parentElement.parentElement.parentNode.removeChild(
-      this.cashReturns.parentNode.parentNode
+    cashReturns.parentElement.parentElement.parentNode.removeChild(
+      cashReturns.parentNode.parentNode
     );
   }
 
-  this.netRevenue.textContent = netRevenue;
+  netRevenue.textContent = netRevenue;
 }
 
 function updateCostOfSalesSection(
@@ -78,37 +78,37 @@ function updateCostOfSalesSection(
   netCostOfSales
 ) {
   //if any of the below are 0, they are deleted off of the IS, unless it is purchases
-  this.purchases.textContent = purchases;
+  purchases.textContent = purchases;
 
   if (openingInventory != 0) {
-    this.openingInventory.textContent = openingInventory;
+    openingInventory.textContent = openingInventory;
   } else {
-    this.openingInventory.parentElement.parentElement.parentNode.removeChild(
-      this.openingInventory.parentNode.parentNode
+    openingInventory.parentElement.parentElement.parentNode.removeChild(
+      openingInventory.parentNode.parentNode
     );
   }
 
   if (purchaseReturns != 0) {
-    this.purchaseReturns.textContent = purchaseReturns;
+    purchaseReturns.textContent = purchaseReturns;
   } else {
-    this.purchaseReturns.parentElement.parentElement.parentNode.removeChild(
-      this.purchaseReturns.parentNode.parentNode
+    purchaseReturns.parentElement.parentElement.parentNode.removeChild(
+      purchaseReturns.parentNode.parentNode
     );
   }
 
   if (closingInventory != 0) {
-    this.closingInventory.textContent = closingInventory;
+    closingInventory.textContent = closingInventory;
   } else {
-    this.closingInventory.parentElement.parentElement.parentNode.removeChild(
-      this.closingInventory.parentNode.parentNode
+    closingInventory.parentElement.parentElement.parentNode.removeChild(
+      closingInventory.parentNode.parentNode
     );
   }
 
-  this.netCostOfSales.textContent = netCostOfSales;
+  netCostOfSales.textContent = netCostOfSales;
 }
 
 function updateGrossProfit(grossProfit) {
-  this.grossProfit.textContent = grossProfit;
+  grossProfit.textContent = grossProfit;
 }
 
 function updateOtherIncomesTotal(value) {
