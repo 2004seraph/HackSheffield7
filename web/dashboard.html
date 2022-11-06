@@ -21,6 +21,7 @@
     <script src="js/pages/transaction.js"></script>
     <script src="js/pages/transaction-posting.js"></script>
     <script src="js/pages/tag.js"></script>
+    <script src="js/lib/chart.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
             </div>
             <div class="tabset-contents">
                 <div id="Dashboard" class="tabset-content">
-
+                    <canvas id="dashboard-canvas" width="100%" height="100%"></canvas>
                 </div>
 
                 <div id="Tags" class="tabset-content">
@@ -85,6 +86,8 @@
             </div>
         </div>
     </div>
+
+    <script>canvas = document.getElementById("dashboard-canvas").getContext("2d");</script>
 
     <script>
         var transactions_page = 'transactions.html'

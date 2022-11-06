@@ -8,18 +8,11 @@ class ProgramState {
         businessName: "",
         financialYearEnd: ""
     }
-
-    accountData = {}
-
-    /**
-     * List of type Transaction
-     */
-    transactions = []
     
     /**
      * Map of type Tag
      */
-    tags = []
+    tags = {}
 
     /**
      * A factory method for a fresh program state
@@ -28,4 +21,11 @@ class ProgramState {
     static create() {
         return new ProgramState()
     }
+
+    accountData = {}
+
+    /**
+     * List of type Transaction
+     */
+    transactions = []
 }
