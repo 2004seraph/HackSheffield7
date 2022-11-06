@@ -55,11 +55,30 @@ function createTransactionEntry(dateVal, tagVal, nameVal, amountVal, referenceVa
 
 function postTransactions(allTransactions){
 
+
+    if(allTransactions == undefined){
+        console.log("NO TRANSACTIN DATA")
+        return
+    }
+
     console.log(allTransactions)
 
     for(let tr in allTransactions){
-        
-    }
+        let data = allTransactions[tr].rawTransactionData
 
-    createTransactionEntry("02/01/1999", "Expense", "Jeremy Nuts", -899.99, "Thanks for the crack kind stranger")
+        let timeDate = data.timestamp.substring(0, data.timestamp.indexOf(" "))
+        
+        let tag = allTransactions[tr].tag
+        if(tag == null){
+            tag = ""
+        }
+
+        let name = data.merchant.name
+
+        let amount = data.amount
+
+        let reference = data.message
+
+        createTransactionEntry(timeDate, tag, name, amount, reference)
+    }
 }
